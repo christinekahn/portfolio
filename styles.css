@@ -1,0 +1,524 @@
+/* ===========================
+   Christine Kahn — Portfolio
+   Bold & Colorful Theme
+   =========================== */
+
+:root {
+  --bg: #0f1117;
+  --bg-soft: #161925;
+  --card: #1b1f2e;
+  --border: rgba(255,255,255,0.08);
+  --text: #f4f5f7;
+  --text-dim: #a7acc0;
+  --orange: #ff6b35;
+  --pink: #ff206e;
+  --teal: #00d9c0;
+  --yellow: #ffd23f;
+  --gradient: linear-gradient(120deg, var(--orange), var(--pink) 55%, var(--teal));
+  --gradient-text: linear-gradient(120deg, var(--orange), var(--pink) 60%, var(--yellow));
+  --radius: 18px;
+  --shadow: 0 20px 50px rgba(0,0,0,0.35);
+
+  /* Spacing scale — 4px base grid, 8 tokens */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(600px circle at 10% -5%, rgba(255,107,53,0.18), transparent 60%),
+    radial-gradient(700px circle at 110% 10%, rgba(0,217,192,0.14), transparent 60%),
+    radial-gradient(500px circle at 50% 100%, rgba(255,32,110,0.12), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--space-32);
+}
+
+/* ---------- Nav ---------- */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(15,17,23,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav.site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-32);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.logo span {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-32);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: var(--text-dim);
+  transition: color 0.2s;
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  border-bottom: 2px solid var(--orange);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-16) var(--space-24);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: #0f1117;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,107,53,0.35);
+}
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: var(--space-96) 0 var(--space-64);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: rgba(0,217,192,0.1);
+  border: 1px solid rgba(0,217,192,0.3);
+  padding: var(--space-8) var(--space-16);
+  border-radius: 999px;
+  margin-bottom: var(--space-24);
+}
+
+h1.display {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-16);
+}
+
+h1.display .grad {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  max-width: 620px;
+  line-height: 1.6;
+  margin-bottom: var(--space-32);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-48);
+}
+
+/* ---------- Stat strip ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+}
+
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-24);
+}
+
+.stat .num {
+  font-size: 2.1rem;
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  margin-bottom: var(--space-8);
+}
+
+.stat .label {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* ---------- Section ---------- */
+section {
+  padding: var(--space-64) 0;
+}
+
+.section-head {
+  margin-bottom: var(--space-48);
+}
+
+.section-head h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  margin: 0 0 var(--space-8);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-head p {
+  color: var(--text-dim);
+  max-width: 560px;
+}
+
+/* ---------- Cards / project grid ---------- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-24);
+}
+
+.grid.cols-3 > * {
+  flex: 1 1 280px;
+  min-width: 280px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-32);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,107,53,0.4);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-8);
+  border-radius: 999px;
+  margin-bottom: var(--space-16);
+  background: rgba(255,32,110,0.12);
+  color: var(--pink);
+  border: 1px solid rgba(255,32,110,0.3);
+}
+
+.tag.teal {
+  background: rgba(0,217,192,0.12);
+  color: var(--teal);
+  border-color: rgba(0,217,192,0.3);
+}
+
+.tag.yellow {
+  background: rgba(255,210,63,0.12);
+  color: var(--yellow);
+  border-color: rgba(255,210,63,0.3);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 var(--space-8);
+  font-weight: 700;
+}
+
+.card p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.card .meta {
+  margin-top: var(--space-16);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* ---------- Case study blocks (work page) ---------- */
+.case {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-32);
+  margin-bottom: var(--space-32);
+  box-shadow: var(--shadow);
+}
+
+.case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  margin-bottom: var(--space-8);
+}
+
+.case h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.case .context {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-24);
+}
+
+.case-block {
+  margin-bottom: var(--space-16);
+}
+
+.case-block .k {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: block;
+  margin-bottom: var(--space-8);
+}
+
+.case-block p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 0.98rem;
+}
+
+.case .impact {
+  margin-top: var(--space-24);
+  padding: var(--space-16) var(--space-24);
+  border-radius: 12px;
+  background: rgba(0,217,192,0.08);
+  border: 1px solid rgba(0,217,192,0.25);
+}
+
+.case .impact .k { color: var(--teal); }
+
+/* ---------- About page ---------- */
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-48);
+  align-items: flex-start;
+}
+
+.about-grid > div:first-child {
+  flex: 0 0 220px;
+}
+
+.about-grid > div:last-child {
+  flex: 1 1 360px;
+  min-width: 280px;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 28px;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: var(--space-24);
+}
+
+.pill {
+  padding: var(--space-8) var(--space-16);
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.timeline {
+  margin-top: var(--space-16);
+  border-left: 2px solid var(--border);
+  padding-left: var(--space-24);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-32);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gradient);
+}
+
+.timeline-item h4 {
+  margin: 0 0 var(--space-4);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.timeline-item .role {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-8);
+}
+
+/* ---------- Contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-24);
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-32);
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--teal);
+}
+
+.contact-card .icon {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-16);
+  display: block;
+}
+
+.contact-card h4 {
+  margin: 0 0 var(--space-8);
+  font-size: 1.05rem;
+}
+
+.contact-card p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* ---------- Footer ---------- */
+footer.site {
+  border-top: 1px solid var(--border);
+  padding: var(--space-32) 0;
+  margin-top: var(--space-48);
+}
+
+footer.site .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+footer.site .socials {
+  display: flex;
+  gap: var(--space-16);
+}
+
+footer.site .socials a:hover {
+  color: var(--orange);
+}
