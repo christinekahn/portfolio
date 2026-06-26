@@ -551,3 +551,47 @@ footer.site .socials a:hover {
     margin: var(--space-24) 0 var(--space-48);
   }
 }
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.form-row input,
+.form-row textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: var(--space-16);
+  resize: vertical;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: var(--space-8);
+  border: none;
+}

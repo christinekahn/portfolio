@@ -12,7 +12,11 @@
   /* ---------- Consulting page — editorial serif insert ---------- */
   .consulting-page {
     background: #fcfcfb;
-    color: #1c1b22;
+    --text: #1c1b22;
+    --text-dim: #6b6877;
+    --border: #e6e4ec;
+    --card: #ffffff;
+    color: var(--text);
     max-width: 680px;
     margin: var(--space-48) auto var(--space-64);
     padding: var(--space-48) var(--space-48);
@@ -22,40 +26,13 @@
     line-height: 1.7;
   }
 
-  .c-hero { padding-bottom: var(--space-32); }
-
-  .c-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 2.1rem;
-    font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    color: #1c1b22;
-    margin: 0;
+  /* Header matches the site's standard hero pattern (eyebrow / display / lede / buttons) */
+  .consulting-page .hero {
+    padding: 0 0 var(--space-32);
+    font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
-  .c-title em { font-style: italic; color: #4a3f6b; }
-
-  .c-hero p {
-    margin-top: var(--space-24);
-    color: #6b6877;
-    max-width: 520px;
-    font-size: 1.05rem;
-  }
-
-  .c-cta {
-    display: inline-block;
-    margin-top: var(--space-32);
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #4a3f6b;
-    text-decoration: none;
-    border-bottom: 1px solid #4a3f6b;
-    padding-bottom: 2px;
-  }
-
-  .c-cta:hover { opacity: 0.7; }
+  .consulting-page .hero .lede { max-width: 520px; }
 
   .c-section {
     padding: var(--space-48) 0;
@@ -98,7 +75,6 @@
 
   @media (max-width: 600px) {
     .consulting-page { padding: var(--space-32) var(--space-24); margin: var(--space-24) var(--space-16) var(--space-48); }
-    .c-title { font-size: 1.6rem; }
   }
 </style>
 </head>
@@ -120,12 +96,17 @@
 
   <div class="consulting-page">
 
-    <section class="c-hero">
-      <h1 class="c-title">Ideas are dreams.<br>Clients pay for <em>delivery</em>.</h1>
-      <p>Fractional technical program leadership and creative production from Christine Kahn — Staff TPM,
-      musician, and podcaster. Helping teams ship ambitious things, whether that's a product launch or a
-      podcast season.</p>
-      <a class="c-cta" href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">Work with me →</a>
+    <section class="hero">
+      <span class="eyebrow">Consulting</span>
+      <h1 class="display">Ideas are dreams.<br>Clients pay for <span class="grad">delivery</span>.</h1>
+      <p class="lede">
+        Fractional technical program leadership and creative production from Christine Kahn — Staff TPM,
+        musician, and podcaster. Helping teams ship ambitious things, whether that's a product launch or a
+        podcast season.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">Work with me →</a>
+      </div>
     </section>
 
     <section class="c-section" id="services">
