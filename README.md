@@ -10,7 +10,7 @@ Personal portfolio site for Christine Kahn — Staff Technical Program Manager. 
 - `contact.html` — contact page
 - `styles.css` — shared stylesheet for all pages
 - `christine-profile.jpeg` — profile photo
-- `CNAME` — custom domain config for GitHub Pages (`christinekahn.com`)
+- `CNAME` — custom domain config for GitHub Pages (`dreamsanddelivery.com`)
 
 ## Deployment
 
