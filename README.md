@@ -1,4 +1,4 @@
-# christinekahn.com
+# dreamsandelivery.com
 
 Personal portfolio site for Christine Kahn — Staff Technical Program Manager. Static HTML/CSS, deployed via GitHub Pages with a custom domain.
 
@@ -18,8 +18,8 @@ Hosted on GitHub Pages, served from the repo root on the `main` branch.
 
 Custom domain setup:
 1. `CNAME` file at repo root contains `christinekahn.com`.
-2. Repo Settings → Pages: source set to `main` / root, custom domain set to `christinekahn.com`.
-3. DNS at the registrar (Squarespace): four `A` records on host `@` pointing to GitHub Pages IPs (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`), plus a `CNAME` record on host `www` pointing to `christinekahn.github.io`.
+2. Repo Settings → Pages: source set to `main` / root, custom domain set to `dreamsanddelivery.com`.
+3. DNS at the registrar (Squarespace): four `A` records on host `@` pointing to GitHub Pages IPs (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`), plus a `CNAME` record on host `www` pointing to `dreamsanddelivery.github.io`.
 4. "Enforce HTTPS" enabled in Pages settings once the domain verifies.
 
 ## Local preview
