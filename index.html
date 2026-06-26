@@ -15,9 +15,8 @@
   <nav class="site">
     <a class="logo" href="index.html">Christine <span>Kahn</span></a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
+      <a href="index.html" class="active">Career</a>
+      <a href="dreams-and-delivery.html">Dreams &amp; Delivery</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
@@ -33,7 +32,7 @@
       Realtor.com. Portland, OR.
     </p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="work.html">View Selected Work →</a>
+      <a class="btn btn-primary" href="#work">View Selected Work →</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
 
@@ -57,55 +56,294 @@
     </div>
   </section>
 
-  <section>
+  <section id="career" style="padding-top: 0;">
+    <div class="section-head">
+      <h2>Career</h2>
+      <p>Where I run programs without formal authority — replaced with governance, feedback loops, and a high bar for quality.</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <img class="avatar" src="christine-profile.jpeg" alt="Christine Kahn">
+        <div class="focus-list">
+          <span class="pill">AI Transformation</span>
+          <span class="pill">Risk Management</span>
+          <span class="pill">Agentic Workflows</span>
+          <span class="pill">Disaster Recovery</span>
+          <span class="pill">Cross-team Governance</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Intuit</h4>
+            <div class="role">Staff Technical Program Manager — AI Transformation, Risk &amp; Resiliency · Mar 2021 – Present</div>
+            <p>Led a grassroots AI transformation effort across Intuit's PMO community, training 40
+            "velocity champions" in prompt engineering and AI agent-building. Also led an AI concierge
+            rollout for 500 new retail stores ($146M in revenue), the QuickBooks/TurboTax GenAI routing
+            program ($11M saved), and the Active/Active Amazon Connect Resiliency program (3x faster DR) —
+            through Intuit's retail expansion and peak tax season.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>OpenTable</h4>
+            <div class="role">Technical Program Manager · Nov 2018 – Mar 2021</div>
+            <p>Launched OpenTable's Delivery product from concept through go-to-market, opening a new
+            revenue stream for restaurant partners.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>20th Century Fox</h4>
+            <div class="role">Technical Program Manager · Jul 2016 – May 2018</div>
+            <p>Led the AWS migration of Fox's media cloud assets onto Disney's infrastructure, preserving
+            asset integrity and production continuity through cutover.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Realtor.com</h4>
+            <div class="role">Technical Program Manager — CRM &amp; Sales Systems · 2014 – 2015</div>
+            <p>Migrated TigerLead from Zendesk to Salesforce after Realtor.com's acquisition, integrating it
+            with Realtor.com's CRM and training Customer Service, Marketing, Sales, and Engineering on the
+            new system.</p>
+          </div>
+        </div>
+
+        <h2 style="margin: 36px 0 16px; font-size: 1.4rem;">Leadership &amp; Certifications</h2>
+        <p style="margin-bottom: 16px;">
+          Mentor 5 Senior TPMs at Intuit. Earlier, supervised teams of 20 in customer service and
+          manufacturing at Bobrick.
+        </p>
+        <div class="focus-list" style="margin-bottom: 8px;">
+          <span class="pill">PSM</span>
+          <span class="pill">PSPO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
     <div class="section-head">
       <h2>Selected Work</h2>
-      <p>How I lead without formal authority, and hold the line on quality.</p>
+      <p>Case studies — the challenge, my role, what I did, and the impact.</p>
     </div>
-    <div class="grid cols-3">
-      <a class="card" href="work.html#ai-transformation">
-        <span class="tag">AI Transformation</span>
+
+    <article class="case" id="ai-transformation">
+      <div class="case-head">
         <h3>Scaling AI Adoption Across Intuit's PMO Community</h3>
-        <p>Built a grassroots network of 40 global "velocity champions" in prompt engineering and AI agents.</p>
-        <div class="meta">Intuit · PMO · Global Champions Network</div>
-      </a>
-      <a class="card" href="work.html#ai-concierge">
-        <span class="tag teal">AI / Retail</span>
+        <span class="tag">AI Transformation</span>
+      </div>
+      <p class="context">Intuit · PMO · Global Velocity Champions Network</p>
+
+      <div class="case-block">
+        <span class="k">Challenge</span>
+        <p>Intuit's PMO community had no structured path to build hands-on AI fluency, even as AI tooling
+        moved fast.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">My Role</span>
+        <p>I led a grassroots AI transformation effort for the PMO community — no mandate, no budget, just a
+        network I built myself.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">What I Did</span>
+        <p>I trained 40 global "velocity champions" in prompt engineering and AI agent-building with Gemini
+        Gems and Claude Code, ran office hours, and stood up a "tech crunch" learning community.</p>
+      </div>
+
+      <div class="impact">
+        <span class="k">Impact</span>
+        <p>Scaled hands-on AI fluency across Intuit's PMO community into a self-sustaining culture of
+        experimentation.</p>
+      </div>
+    </article>
+
+    <article class="case" id="ai-concierge">
+      <div class="case-head">
         <h3>AI Concierge for 500 New Retail Stores</h3>
-        <p>Delivered an AI concierge for Intuit's retail expansion, unlocking $146M in revenue.</p>
-        <div class="meta">Intuit · AI/Product · Retail Operations</div>
-      </a>
-      <a class="card" href="work.html#routing">
+        <span class="tag teal">AI / Retail</span>
+      </div>
+      <p class="context">Intuit · AI/Product · Retail Operations</p>
+
+      <div class="case-block">
+        <span class="k">Challenge</span>
+        <p>Intuit was opening 500 new retail stores and needed an AI concierge to support customers at
+        scale.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">My Role</span>
+        <p>I led delivery of the AI concierge, coordinating AI/Product and Retail Operations across all 500
+        stores.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">What I Did</span>
+        <p>I drove the plan from concept through nationwide rollout, aligning the AI/Product roadmap with
+        each store's launch timeline.</p>
+      </div>
+
+      <div class="impact">
+        <span class="k">Impact</span>
+        <p>Unlocked $146M in revenue across the 500 new stores.</p>
+      </div>
+    </article>
+
+    <article class="case" id="routing">
+      <div class="case-head">
+        <h3>QuickBooks/TurboTax Virtual Expert Platform — GenAI Routing</h3>
         <span class="tag teal">GenAI</span>
-        <h3>QuickBooks/TurboTax Virtual Expert Routing</h3>
-        <p>Led GenAI-powered routing with a weekly feedback loop, saving $11M in handle time.</p>
-        <div class="meta">Intuit · Engineering · Product · ML</div>
-      </a>
-      <a class="card" href="work.html#resiliency">
-        <span class="tag">Resiliency</span>
+      </div>
+      <p class="context">Intuit · Engineering · Product · ML</p>
+
+      <div class="case-block">
+        <span class="k">Challenge</span>
+        <p>Support routing was rules-based and inefficient, causing long waits and misrouted cases during
+        peak tax season.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">My Role</span>
+        <p>I drove a GenAI-powered attribute-based routing initiative to improve match accuracy and cut
+        cost-to-serve.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">What I Did</span>
+        <p>I built the delivery plan with Engineering and Product, then set up a feedback loop: weekly
+        metrics reviews, rapid ML iteration, and a clear escalation path for underperforming rules.</p>
+      </div>
+
+      <div class="impact">
+        <span class="k">Impact</span>
+        <p>Delivered $11M in efficiency from reduced handle time — the feedback loop became the template for
+        the OpenAI/ChatGPT TurboTax integration, shipped 0→1 in two weeks.</p>
+      </div>
+    </article>
+
+    <article class="case" id="resiliency">
+      <div class="case-head">
         <h3>Active/Active Amazon Connect Resiliency</h3>
-        <p>Redesigned Intuit's contact center DR architecture, cutting RTO from 15 to 5 minutes.</p>
-        <div class="meta">Intuit · Platform Engineering · AWS ProServe</div>
-      </a>
-      <a class="card" href="work.html#delivery-product">
-        <span class="tag yellow">New Revenue</span>
+        <span class="tag">Resiliency</span>
+      </div>
+      <p class="context">Intuit · Platform Engineering · AWS ProServe · Analytics</p>
+
+      <div class="case-block">
+        <span class="k">Challenge</span>
+        <p>Intuit's contact center ran active/passive across B2C, B2B, and CXM Salesforce, with a 15-minute
+        RTO — too slow for customer-facing support during tax season.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">My Role</span>
+        <p>I owned the redesign to active/active, coordinating Platform Engineering, AWS ProServe, and
+        Analytics with no formal authority over any of them.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">What I Did</span>
+        <p>I restructured five workstreams — CTI adapter upgrade, Amazon Connect Global Resiliency, Global
+        Failover DR fix, and DynamoDB Global Tables migration — under one DACE governance model, with
+        quarterly GameDay DR simulations to pressure-test failover live.</p>
+      </div>
+
+      <div class="impact">
+        <span class="k">Impact</span>
+        <p>Cut RTO from 15 to 5 minutes — a 3x improvement for a system supporting millions of customer
+        interactions.</p>
+      </div>
+    </article>
+
+    <article class="case" id="delivery-product">
+      <div class="case-head">
         <h3>OpenTable Delivery Product Launch</h3>
-        <p>Launched OpenTable's Delivery product, opening a new revenue stream for restaurants.</p>
-        <div class="meta">OpenTable · Product · Engineering</div>
-      </a>
-      <a class="card" href="work.html#disney-migration">
-        <span class="tag">Acquisition</span>
+        <span class="tag yellow">New Revenue</span>
+      </div>
+      <p class="context">OpenTable · Product · Engineering</p>
+
+      <div class="case-block">
+        <span class="k">Challenge</span>
+        <p>OpenTable's core business was reservations — it needed a new product line to capture delivery
+        demand.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">My Role</span>
+        <p>I led the program to build and launch OpenTable's new Delivery product.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">What I Did</span>
+        <p>I coordinated Product and Engineering to scope, build, and ship Delivery through go-to-market.</p>
+      </div>
+
+      <div class="impact">
+        <span class="k">Impact</span>
+        <p>Opened a new revenue stream for OpenTable and its restaurant partners.</p>
+      </div>
+    </article>
+
+    <article class="case" id="disney-migration">
+      <div class="case-head">
         <h3>Fox → Disney Media Cloud Migration</h3>
-        <p>Migrated Fox's media cloud assets onto Disney's AWS infrastructure during the acquisition.</p>
-        <div class="meta">20th Century Fox · Disney · AWS</div>
-      </a>
-      <a class="card" href="work.html#tigerlead">
-        <span class="tag yellow">Integration</span>
+        <span class="tag">Acquisition</span>
+      </div>
+      <p class="context">20th Century Fox · Disney · AWS · Media Cloud Engineering</p>
+
+      <div class="case-block">
+        <span class="k">Challenge</span>
+        <p>As part of Disney's acquisition of Fox, its media cloud assets had to move onto Disney's AWS
+        infrastructure without disrupting active productions or losing asset integrity.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">My Role</span>
+        <p>I led the technical program to migrate Fox's digital media assets onto Disney's AWS
+        infrastructure.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">What I Did</span>
+        <p>I coordinated Fox and Disney media engineering, sequencing the migration to preserve asset
+        metadata, permissions, and production continuity through cutover.</p>
+      </div>
+
+      <div class="impact">
+        <span class="k">Impact</span>
+        <p>Completed the migration, moving Fox's media cloud assets onto Disney's AWS infrastructure.</p>
+      </div>
+    </article>
+
+    <article class="case" id="tigerlead">
+      <div class="case-head">
         <h3>TigerLead Acquisition Integration</h3>
-        <p>Migrated TigerLead from Zendesk to Salesforce and trained four teams on Realtor.com's CRM.</p>
-        <div class="meta">Realtor.com · CRM · Cross-team</div>
-      </a>
-    </div>
+        <span class="tag yellow">Integration</span>
+      </div>
+      <p class="context">Realtor.com · CRM · Sales Operations</p>
+
+      <div class="case-block">
+        <span class="k">Challenge</span>
+        <p>After acquiring TigerLead, Realtor.com found its operations still running on Zendesk —
+        disconnected from the Salesforce CRM.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">My Role</span>
+        <p>I led the migration of TigerLead off Zendesk and onto Salesforce, integrating it with Realtor.com's
+        CRM.</p>
+      </div>
+
+      <div class="case-block">
+        <span class="k">What I Did</span>
+        <p>I configured the Salesforce workflows and trained Customer Service, Marketing, Sales, and
+        Engineering on the new system.</p>
+      </div>
+
+      <div class="impact">
+        <span class="k">Impact</span>
+        <p>Migrated TigerLead to Salesforce, integrated it with Realtor.com's CRM, and got four teams live on
+        it.</p>
+      </div>
+    </article>
+
   </section>
 
 </main>
@@ -116,7 +354,8 @@
     <div class="socials">
       <a href="https://github.com/christinekahn" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://dreamsanddelivery.buzzsprout.com/" target="_blank" rel="noopener">Podcast</a>
+      <a href="dreams-and-delivery.html">Dreams &amp; Delivery</a>
+      <a href="https://www.christinekmusic.com" target="_blank" rel="noopener">Music</a>
     </div>
   </div>
 </footer>
