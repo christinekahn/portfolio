@@ -522,3 +522,32 @@ footer.site .socials {
 footer.site .socials a:hover {
   color: var(--orange);
 }
+
+/* ---------- Page Card (light editorial insert) ---------- */
+.page-card {
+  background: #fcfcfb;
+  --text: #1c1b22;
+  --text-dim: #6b6877;
+  --border: #e6e4ec;
+  --card: #ffffff;
+  color: var(--text);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: var(--space-48) 0 var(--space-64);
+  padding: var(--space-16) var(--space-48) var(--space-48);
+}
+
+.page-card .hero {
+  padding-top: var(--space-32);
+}
+
+.page-card .btn-ghost {
+  background: rgba(28,27,34,0.03);
+}
+
+@media (max-width: 600px) {
+  .page-card {
+    padding: var(--space-16) var(--space-24) var(--space-32);
+    margin: var(--space-24) 0 var(--space-48);
+  }
+}
