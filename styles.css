@@ -189,6 +189,24 @@ nav.site {
   white-space: nowrap;
 }
 
+.eyebrow-row .eyebrow.orange {
+  color: var(--orange);
+  background: rgba(255,107,53,0.1);
+  border-color: rgba(255,107,53,0.3);
+}
+
+.eyebrow-row .eyebrow.pink {
+  color: var(--pink);
+  background: rgba(255,32,110,0.1);
+  border-color: rgba(255,32,110,0.3);
+}
+
+.eyebrow-row .eyebrow.yellow {
+  color: var(--yellow);
+  background: rgba(255,210,63,0.1);
+  border-color: rgba(255,210,63,0.3);
+}
+
 .eyebrow {
   display: inline-block;
   font-size: 0.8rem;
