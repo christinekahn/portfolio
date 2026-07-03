@@ -10,7 +10,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -37,13 +37,27 @@
       A podcast on tech careers, AI, and life beyond the day job — plus music, performed and
       recorded as Christine K.
     </p>
-    <div class="subtab-nav">
-      <button class="subtab-btn" data-tab="podcast" onclick="showCreativeTab('podcast')" type="button">🎙️ Podcast</button>
-      <button class="subtab-btn" data-tab="music" onclick="showCreativeTab('music')" type="button">🎵 Music</button>
+    <div class="subtab-nav" role="tablist" aria-label="Creative sections">
+      <button class="subtab-btn" data-tab="podcast" onclick="showCreativeTab('podcast')" type="button" role="tab" id="tab-podcast" aria-controls="panel-podcast">
+        <span class="subtab-icon" aria-hidden="true">🎙️</span>
+        <span class="subtab-text">
+          <span class="subtab-title">The Podcast</span>
+          <span class="subtab-desc">Dreams and Delivery — weekly conversations</span>
+        </span>
+      </button>
+      <button class="subtab-btn" data-tab="music" onclick="showCreativeTab('music')" type="button" role="tab" id="tab-music" aria-controls="panel-music">
+        <span class="subtab-icon" aria-hidden="true">🎵</span>
+        <span class="subtab-text">
+          <span class="subtab-title">The Music</span>
+          <span class="subtab-desc">Christine K — releases &amp; collaborations</span>
+        </span>
+      </button>
     </div>
   </section>
 
-  <div id="panel-podcast" class="tab-panel">
+  <div id="panel-podcast" class="tab-panel" role="tabpanel" aria-labelledby="tab-podcast">
+
+    <span class="panel-label pink">🎙️ You're in — The Podcast</span>
 
     <section style="padding-top: var(--space-32);">
       <div style="display: flex; align-items: center; gap: var(--space-24); flex-wrap: wrap;">
@@ -58,13 +72,15 @@
     <section style="padding-top: 0;">
       <div class="section-head">
         <h2>Episodes</h2>
-        <p>Season 1 — conversations on what it takes to deliver, and what comes after.</p>
+        <p>Season 1 — conversations on what it takes to deliver, and what comes after. The newest
+        episodes appear here automatically.</p>
       </div>
       <div style="margin-bottom: var(--space-32);">
         <div id='buzzsprout-large-player'></div>
         <script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/2622779.js?container_id=buzzsprout-large-player&player=large'></script>
       </div>
-      <div class="grid cols-3">
+      <!-- Cards below are a static fallback — replaced at load time from the Buzzsprout RSS feed -->
+      <div class="grid cols-3" id="episode-grid">
         <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19408376-aaron-kagan-graspingai-exploring-the-human-ai-connection" target="_blank" rel="noopener">
           <img class="card-cover" src="https://storage.buzzsprout.com/oz1gqdryskhaultqcl835dao7rhp?.jpg" alt="Episode 4 cover art: Aaron Kagan" loading="lazy">
           <div class="card-body">
@@ -143,11 +159,13 @@
 
   </div>
 
-  <div id="panel-music" class="tab-panel">
+  <div id="panel-music" class="tab-panel" role="tabpanel" aria-labelledby="tab-music">
+
+    <span class="panel-label teal">🎵 You're in — The Music</span>
 
     <section style="padding-top: var(--space-32);">
       <div class="section-head">
-        <h2>Christine K — Music</h2>
+        <h2>Christine K — Music <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span></h2>
         <p>Classically trained coloratura soprano based in Portland, OR. Raised in the Philippines on
         choir and musical theatre, she found electronic music while working at Native Instruments in
         Hollywood and now records from her home studio — operatic, sensual vocals over electronic
@@ -166,7 +184,50 @@
       </div>
       <div class="grid cols-3">
         <a class="card has-cover" href="https://youtu.be/VPlcI5HWrzo?si=n2BSjQ0-9ym3rdkI" target="_blank" rel="noopener">
-          <img class="card-cover" src="http://static1.squarespace.com/static/5c3112a4f79392032f1bfc60/t/64a2121a6108c2124b2dbd55/1688343066568/Amazing-Dandelion-Wallpaper.jpg?format=1500w" alt="The Elements EP cover art" loading="lazy">
+          <svg class="card-cover" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Elements EP cover art">
+            <defs>
+              <linearGradient id="el-air" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2b3a4d"/><stop offset="1" stop-color="#16202e"/>
+              </linearGradient>
+              <linearGradient id="el-water" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0e3a3f"/><stop offset="1" stop-color="#121a26"/>
+              </linearGradient>
+              <linearGradient id="el-fire" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#3d1424"/><stop offset="1" stop-color="#1c1220"/>
+              </linearGradient>
+              <linearGradient id="el-earth" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#332a14"/><stop offset="1" stop-color="#181420"/>
+              </linearGradient>
+              <linearGradient id="el-ring" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff6b35"/><stop offset="0.55" stop-color="#ff206e"/><stop offset="1" stop-color="#00d9c0"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="#0f1117"/>
+            <!-- Air -->
+            <rect x="14" y="14" width="182" height="182" rx="14" fill="url(#el-air)"/>
+            <path d="M40 80 q30 -22 60 0 t60 0" fill="none" stroke="#8fd8ff" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+            <path d="M52 118 q26 -18 52 0 t52 0" fill="none" stroke="#8fd8ff" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+            <path d="M66 152 q20 -14 40 0 t40 0" fill="none" stroke="#8fd8ff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+            <!-- Water -->
+            <rect x="204" y="14" width="182" height="182" rx="14" fill="url(#el-water)"/>
+            <path d="M204 120 q23 -16 46 0 t46 0 t46 0 t46 0 V196 h-184 Z" fill="#00d9c0" opacity="0.5"/>
+            <path d="M204 146 q23 -14 46 0 t46 0 t46 0 t46 0 V196 h-184 Z" fill="#00d9c0" opacity="0.75"/>
+            <circle cx="295" cy="66" r="18" fill="#c8fff7" opacity="0.7"/>
+            <!-- Fire -->
+            <rect x="14" y="204" width="182" height="182" rx="14" fill="url(#el-fire)"/>
+            <path d="M105 236 q26 34 16 62 q22 -8 26 -30 q18 34 2 62 q-16 28 -44 28 q-28 0 -44 -28 q-18 -32 6 -64 q4 22 18 28 q-10 -32 20 -58 Z" fill="#ff6b35"/>
+            <path d="M105 288 q14 20 8 36 q-4 16 -18 16 q-14 0 -18 -16 q-4 -18 10 -34 q2 10 9 14 q-4 -10 9 -16 Z" fill="#ffd23f"/>
+            <!-- Earth -->
+            <rect x="204" y="204" width="182" height="182" rx="14" fill="url(#el-earth)"/>
+            <circle cx="340" cy="252" r="20" fill="#ffd23f" opacity="0.9"/>
+            <path d="M204 386 L262 288 L300 340 L330 300 L386 386 Z" fill="#a07c3f"/>
+            <path d="M204 386 L246 330 L282 386 Z" fill="#6f5527"/>
+            <!-- Center badge -->
+            <circle cx="200" cy="200" r="58" fill="#0f1117"/>
+            <circle cx="200" cy="200" r="58" fill="none" stroke="url(#el-ring)" stroke-width="4"/>
+            <text x="200" y="193" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#f4f5f7">THE</text>
+            <text x="200" y="216" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#f4f5f7">ELEMENTS</text>
+          </svg>
           <div class="card-body">
             <span class="tag teal">EP</span>
             <h3>The Elements</h3>
@@ -176,7 +237,31 @@
           </div>
         </a>
         <a class="card has-cover" href="https://skinvehiclescollabs.bandcamp.com/album/sirens-lament" target="_blank" rel="noopener">
-          <div class="card-cover-placeholder" aria-hidden="true">🌌</div>
+          <svg class="card-cover" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Siren trilogy cover art — a ringed planet and siren-song waveform in deep space">
+            <defs>
+              <radialGradient id="si-sky" cx="0.7" cy="0.25" r="1.1">
+                <stop offset="0" stop-color="#1d2440"/><stop offset="1" stop-color="#0b0d16"/>
+              </radialGradient>
+              <linearGradient id="si-planet" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff206e"/><stop offset="1" stop-color="#5a1030"/>
+              </linearGradient>
+              <linearGradient id="si-wave" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#00d9c0"/><stop offset="0.6" stop-color="#ff206e"/><stop offset="1" stop-color="#ff6b35"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#si-sky)"/>
+            <g fill="#f4f5f7">
+              <circle cx="46" cy="60" r="2"/><circle cx="120" cy="34" r="1.5"/><circle cx="205" cy="72" r="2.2" opacity="0.8"/>
+              <circle cx="342" cy="46" r="1.8"/><circle cx="368" cy="120" r="1.4"/><circle cx="60" cy="160" r="1.5" opacity="0.7"/>
+              <circle cx="30" cy="290" r="1.8" opacity="0.7"/><circle cx="150" cy="120" r="1.2"/><circle cx="330" cy="330" r="2" opacity="0.6"/>
+              <circle cx="90" cy="352" r="1.5" opacity="0.7"/><circle cx="250" cy="30" r="1.3"/><circle cx="380" cy="240" r="1.5"/>
+            </g>
+            <circle cx="278" cy="128" r="58" fill="url(#si-planet)"/>
+            <ellipse cx="278" cy="128" rx="98" ry="24" fill="none" stroke="#00d9c0" stroke-width="5" opacity="0.85" transform="rotate(-18 278 128)"/>
+            <path d="M0 282 q20 -46 40 0 t40 0 q10 -78 20 0 q10 46 20 0 t40 0 q10 -110 20 0 q10 66 20 0 t40 0 q10 -46 20 0 t40 0 q10 -84 20 0 q10 46 20 0 t40 0 t20 0"
+              fill="none" stroke="url(#si-wave)" stroke-width="5" stroke-linecap="round"/>
+            <text x="200" y="356" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" letter-spacing="8" fill="#f4f5f7">S I R E N</text>
+          </svg>
           <div class="card-body">
             <span class="tag yellow">Singles</span>
             <h3>Siren's Lament, Siren Song &amp; Melancholia</h3>
@@ -185,7 +270,31 @@
           </div>
         </a>
         <a class="card has-cover" href="https://www.christinekmusic.com/#classics-section" target="_blank" rel="noopener">
-          <div class="card-cover-placeholder" aria-hidden="true">💌</div>
+          <svg class="card-cover" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Love Songs cover art — a vinyl record with a heart-shaped label on a warm sunset gradient">
+            <defs>
+              <linearGradient id="lo-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff6b35"/><stop offset="0.6" stop-color="#ff206e"/><stop offset="1" stop-color="#7a1040"/>
+              </linearGradient>
+              <radialGradient id="lo-vinyl" cx="0.35" cy="0.35" r="1">
+                <stop offset="0" stop-color="#262a38"/><stop offset="1" stop-color="#0f1117"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#lo-bg)"/>
+            <g fill="#ffd23f" opacity="0.9">
+              <circle cx="60" cy="70" r="3"/><circle cx="330" cy="52" r="2.4"/><circle cx="356" cy="300" r="3"/>
+              <circle cx="44" cy="322" r="2.4"/><circle cx="304" cy="356" r="2"/><circle cx="86" cy="360" r="2"/>
+            </g>
+            <circle cx="200" cy="196" r="132" fill="url(#lo-vinyl)"/>
+            <g fill="none" stroke="#f4f5f7" opacity="0.16">
+              <circle cx="200" cy="196" r="118" stroke-width="2"/>
+              <circle cx="200" cy="196" r="104" stroke-width="1.5"/>
+              <circle cx="200" cy="196" r="90" stroke-width="1.5"/>
+              <circle cx="200" cy="196" r="76" stroke-width="1"/>
+            </g>
+            <path d="M200 244 C 174 222 152 204 152 182 C 152 166 164 156 178 156 C 188 156 196 162 200 170 C 204 162 212 156 222 156 C 236 156 248 166 248 182 C 248 204 226 222 200 244 Z" fill="#ffd23f"/>
+            <circle cx="200" cy="196" r="6" fill="#0f1117"/>
+            <text x="200" y="368" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" letter-spacing="6" fill="#f4f5f7">LOVE SONGS</text>
+          </svg>
           <div class="card-body">
             <span class="tag">Collection</span>
             <h3>Love Songs</h3>
@@ -262,6 +371,14 @@
 
   </div>
 
+  <div class="page-next">
+    <div class="page-next-text">
+      <span class="k">Up next</span>
+      <span class="t">Like what you hear? Let's connect.</span>
+    </div>
+    <a class="btn btn-primary" href="contact.html">Contact →</a>
+  </div>
+
 </div>
 
 <script>
@@ -270,7 +387,9 @@
       panel.classList.toggle('active', panel.id === 'panel-' + tab);
     });
     document.querySelectorAll('.subtab-btn').forEach(function (btn) {
-      btn.classList.toggle('active', btn.dataset.tab === tab);
+      var selected = btn.dataset.tab === tab;
+      btn.classList.toggle('active', selected);
+      btn.setAttribute('aria-selected', selected ? 'true' : 'false');
     });
     if (history.replaceState) { history.replaceState(null, '', '#' + tab); }
   }
@@ -278,6 +397,144 @@
     var hash = location.hash.replace('#', '');
     showCreativeTab(hash === 'music' ? 'music' : 'podcast');
   });
+
+  /* Episode cards — pulled live from the Buzzsprout RSS feed.
+     If the fetch fails, the static cards in the HTML stay as-is. */
+  (function () {
+    var grid = document.getElementById('episode-grid');
+    if (!grid || !window.fetch || !window.DOMParser) return;
+
+    var SHOW_ART = 'https://storage.buzzsprout.com/8xqlkt62te07zx3o1h5692u7698h?.jpg';
+    var TAG_CLASSES = ['tag', 'tag teal', 'tag yellow'];
+    var MAX_EPISODES = 6;
+
+    function itunesEl(item, name) {
+      var els = item.getElementsByTagNameNS('*', name);
+      return els.length ? els[0] : null;
+    }
+
+    function textOf(item, tag) {
+      var el = item.getElementsByTagName(tag)[0];
+      return el ? el.textContent.trim() : '';
+    }
+
+    function formatDate(str) {
+      var d = new Date(str);
+      if (isNaN(d.getTime())) return '';
+      // Buzzsprout publishes at midnight ET; format in UTC so the calendar date
+      // matches the feed regardless of the visitor's timezone.
+      return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+    }
+
+    function formatDuration(raw) {
+      if (!raw) return '';
+      if (raw.indexOf(':') !== -1) return raw.replace(/^0(\d:)/, '$1');
+      var s = parseInt(raw, 10);
+      if (isNaN(s)) return '';
+      var h = Math.floor(s / 3600);
+      var m = Math.floor((s % 3600) / 60);
+      var sec = String(s % 60);
+      if (sec.length < 2) sec = '0' + sec;
+      if (!h) return m + ':' + sec;
+      var mm = String(m);
+      if (mm.length < 2) mm = '0' + mm;
+      return h + ':' + mm + ':' + sec;
+    }
+
+    function summarize(html) {
+      var box = document.createElement('div');
+      // Pad block-element boundaries so textContent doesn't glue paragraphs together
+      box.innerHTML = html
+        .replace(/<br\s*\/?>/gi, ' ')
+        .replace(/<\/(p|div|li|h[1-6])>/gi, '</$1> ');
+      // Drop Buzzsprout's injected "Send us Fan Mail" paragraph
+      var fanLinks = box.querySelectorAll('a[href*="fan_mail"]');
+      for (var i = 0; i < fanLinks.length; i++) {
+        var node = fanLinks[i];
+        while (node.parentNode && node.parentNode !== box && node.parentNode.tagName !== 'DIV') {
+          node = node.parentNode;
+        }
+        if (node.parentNode) node.parentNode.removeChild(node);
+      }
+      var text = (box.textContent || '').replace(/\s+/g, ' ').trim();
+      if (text.length > 150) {
+        text = text.slice(0, 150).replace(/\s+\S*$/, '') + '…';
+      }
+      return text;
+    }
+
+    function episodeLink(item) {
+      var enclosure = item.getElementsByTagName('enclosure')[0];
+      if (!enclosure || !enclosure.getAttribute('url')) {
+        return 'https://dreamsanddelivery.buzzsprout.com';
+      }
+      return enclosure.getAttribute('url')
+        .replace(/\.mp3(\?.*)?$/, '')
+        .replace('://www.buzzsprout.com/', '://dreamsanddelivery.buzzsprout.com/');
+    }
+
+    fetch('https://feeds.buzzsprout.com/2622779.rss')
+      .then(function (res) {
+        if (!res.ok) throw new Error('feed ' + res.status);
+        return res.text();
+      })
+      .then(function (xml) {
+        var doc = new DOMParser().parseFromString(xml, 'text/xml');
+        var items = Array.prototype.slice.call(doc.getElementsByTagName('item'));
+        if (!items.length) return;
+
+        var cards = items.slice(0, MAX_EPISODES).map(function (item, i) {
+          var epEl = itunesEl(item, 'episode');
+          var epNum = epEl ? epEl.textContent.trim() : '';
+          var imgEl = itunesEl(item, 'image');
+          var durEl = itunesEl(item, 'duration');
+
+          var card = document.createElement('a');
+          card.className = 'card has-cover';
+          card.href = episodeLink(item);
+          card.target = '_blank';
+          card.rel = 'noopener';
+
+          var img = document.createElement('img');
+          img.className = 'card-cover';
+          img.src = (imgEl && imgEl.getAttribute('href')) || SHOW_ART;
+          img.alt = epNum ? 'Episode ' + epNum + ' cover art' : 'Episode cover art';
+          img.loading = 'lazy';
+          card.appendChild(img);
+
+          var body = document.createElement('div');
+          body.className = 'card-body';
+
+          var tag = document.createElement('span');
+          tag.className = TAG_CLASSES[i % TAG_CLASSES.length];
+          tag.textContent = epNum ? 'Episode ' + epNum : 'Episode';
+          body.appendChild(tag);
+
+          var h3 = document.createElement('h3');
+          h3.textContent = textOf(item, 'title');
+          body.appendChild(h3);
+
+          var p = document.createElement('p');
+          p.textContent = summarize(textOf(item, 'description'));
+          body.appendChild(p);
+
+          var meta = document.createElement('div');
+          meta.className = 'meta';
+          meta.textContent = [
+            formatDate(textOf(item, 'pubDate')),
+            formatDuration(durEl ? durEl.textContent.trim() : '')
+          ].filter(Boolean).join(' · ');
+          body.appendChild(meta);
+
+          card.appendChild(body);
+          return card;
+        });
+
+        grid.innerHTML = '';
+        cards.forEach(function (c) { grid.appendChild(c); });
+      })
+      .catch(function () { /* static fallback cards remain */ });
+  })();
 </script>
 
 </main>
