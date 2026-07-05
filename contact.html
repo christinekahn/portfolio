@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Christine Kahn</title>
 <meta name="description" content="Get in touch with Christine Kahn on LinkedIn, GitHub, or the Dreams and Delivery podcast.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dreamsanddelivery.com/contact.html">
+<meta property="og:title" content="Contact — Christine Kahn">
+<meta property="og:description" content="Get in touch with Christine Kahn — open to TPM, Ops, and AI Transformation roles, Portland OR / Remote.">
+<meta property="og:image" content="https://dreamsanddelivery.com/christine-large-profile.png">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -20,6 +26,7 @@
     <div class="nav-links">
       <a href="index.html">Career</a>
       <a href="consulting.html">Consulting</a>
+      <a href="skills.html">Skills</a>
       <a href="dreams-and-delivery.html">Creative</a>
       <a href="contact.html" class="active">Contact</a>
     </div>
@@ -42,10 +49,11 @@
     </div>
   </section>
 
-  <section style="padding-top: 0;">
+  <section id="message-form" style="padding-top: 0;">
     <div class="section-head">
       <h2>Send a message</h2>
-      <p>Prefer not to use LinkedIn? Send a note directly and it'll land in my inbox.</p>
+      <p>Prefer not to use LinkedIn? Send a note directly and it'll land in my inbox. Recruiters and
+      hiring managers: my full resume is available on request — just ask here.</p>
     </div>
     <form class="contact-form" action="https://formspree.io/f/mojoeozv" method="POST">
       <div class="form-row">
@@ -107,11 +115,61 @@
       <a href="https://github.com/christinekahn" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="consulting.html">Consulting</a>
+      <a href="skills.html">Skills</a>
       <a href="dreams-and-delivery.html">Creative</a>
       <a href="https://www.christinekmusic.com" target="_blank" rel="noopener">Music</a>
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var prefills = {
+      'multi-agent': {
+        subject: 'Skill inquiry: Multi-Agent Workflow Design',
+        message: "Hi Christine — I'm interested in the Multi-Agent Workflow Design pattern from your Skill Marketplace. We have a multi-step process I'd like to talk about running with coordinated AI agents."
+      },
+      'rapid-ai': {
+        subject: 'Skill inquiry: 0→1 Rapid AI Integration Playbook',
+        message: "Hi Christine — I'd like to talk about your 0→1 Rapid AI Integration Playbook. We're working toward shipping an AI integration and want to move fast without breaking things."
+      },
+      'resiliency': {
+        subject: 'Skill inquiry: Active/Active Resiliency Blueprint',
+        message: "Hi Christine — I'm interested in your Active/Active Resiliency Blueprint. I'd like to talk about our disaster-recovery posture and recovery-time requirements."
+      },
+      'governance': {
+        subject: 'Skill inquiry: Cross-Team Governance Model',
+        message: "Hi Christine — I'd like to talk about your Cross-Team Governance Model. We have a multi-team initiative that needs clearer decision rights and escalation paths."
+      },
+      'ai-training': {
+        subject: 'Skill inquiry: AI Fluency Enablement Program',
+        message: "Hi Christine — I'm interested in your AI Fluency Enablement Program. I'd like to talk about building hands-on AI skills across our team."
+      },
+      'working-session': {
+        subject: 'Engagement inquiry: Working Session',
+        message: "Hi Christine — I'd like to set up a working session to apply one of your skills to a problem my team is facing. Here's what we're working on:"
+      },
+      'applied-sprint': {
+        subject: 'Engagement inquiry: Applied Sprint',
+        message: "Hi Christine — I'm interested in a 2–4 week applied sprint on a live initiative. Here's the problem we'd want to point it at:"
+      },
+      'fractional': {
+        subject: 'Engagement inquiry: Fractional Partnership',
+        message: "Hi Christine — I'd like to talk about ongoing fractional program leadership, 1–3 days a week. Here's our situation:"
+      },
+      'skills': {
+        subject: 'Skill Marketplace inquiry',
+        message: "Hi Christine — I found your Skill Marketplace and would like to talk about bringing one of your skills to my team."
+      }
+    };
+    var interest = new URLSearchParams(window.location.search).get('interest');
+    var p = interest && prefills[interest];
+    if (!p) return;
+    document.getElementById('message').value = p.message;
+    document.querySelector('input[name="_subject"]').value = p.subject;
+    document.getElementById('name').focus({ preventScroll: true });
+  })();
+</script>
 
 </body>
 </html>
