@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Marketplace — Christine Kahn</title>
+<meta name="description" content="Browse the AI agentic workflows, program frameworks, and risk playbooks Christine Kahn has developed across 12+ years in AI transformation and technical program leadership — and bring one to your team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dreamsanddelivery.com/skills.html">
+<meta property="og:title" content="Skill Marketplace — Christine Kahn">
+<meta property="og:description" content="Free, working Claude Skills plus the AI agentic workflows, program frameworks, and risk playbooks behind them — download one or bring one to your team.">
+<meta property="og:image" content="https://dreamsanddelivery.com/christine-large-profile.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<link rel="stylesheet" href="styles.css?v=10">
+<style>
+  /* ---------- Skill marketplace page ---------- */
+  .tag.orange {
+    background: rgba(255,107,53,0.12);
+    color: var(--orange);
+    border-color: rgba(255,107,53,0.3);
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    margin-bottom: var(--space-32);
+  }
+
+  .filter-btn {
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: var(--space-8) var(--space-16);
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+
+  .filter-btn:hover { color: var(--text); }
+
+  .filter-btn.active {
+    color: var(--text);
+    border-color: var(--orange);
+    background: rgba(255,107,53,0.08);
+  }
+
+  .skill-card .meta {
+    margin-top: var(--space-16);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--border);
+  }
+
+  .skill-card .meta strong { color: var(--text); }
+
+  .skill-card .cta {
+    display: inline-block;
+    margin-top: var(--space-16);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--teal);
+  }
+
+  .skill-card { display: flex; flex-direction: column; }
+  .skill-card.hide { display: none; }
+
+  .tier-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-24);
+  }
+
+  .tier-card {
+    flex: 1 1 280px;
+    min-width: 260px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-32);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tier-card .tier-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-8);
+  }
+
+  .tier-card h3 { margin: 0 0 var(--space-8); font-size: 1.2rem; }
+  .tier-card p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 var(--space-16); flex: 1; }
+
+  .install-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    margin-top: var(--space-16);
+    background: var(--gradient);
+    color: #0f1117;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: var(--space-16) var(--space-24);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .install-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,107,53,0.35);
+  }
+
+  .install-btn .bolt { font-size: 1.05rem; }
+
+  .cred-line {
+    margin-top: var(--space-32);
+    font-size: 0.9rem;
+    color: var(--text-dim);
+  }
+
+  .cred-line strong { color: var(--text); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="site">
+    <a class="logo" href="index.html">Christine <span>Kahn</span></a>
+    <div class="nav-links">
+      <a href="index.html">Career</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="dreams-and-delivery.html">Creative</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="page-card">
+
+    <section class="hero">
+      <span class="eyebrow">Skill Marketplace</span>
+      <h1 class="display">Ideas are dreams.<br>These are the <span class="grad">skills</span> that ship them.</h1>
+      <p class="lede">
+        A working catalog of AI agentic workflows, program frameworks, and risk playbooks — patterns shaped
+        by 12+ years leading AI/ML platforms and mission-critical programs across fintech, media, and real
+        estate tech, plus the automation and AI workflows built for my own weekly podcast. Start with the
+        free downloads, then bring the one you need to your team.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#downloads">⚡ Download a skill</a>
+        <a class="btn btn-ghost" href="contact.html?interest=skills#message-form">Bring a skill to your team →</a>
+      </div>
+
+      <p class="cred-line">Behind these skills: <strong>$146M</strong> in revenue unlocked
+        · <strong>$11M</strong> saved · a 0→1 AI integration shipped in <strong>2 weeks</strong>
+        · <strong>40</strong> AI champions trained</p>
+    </section>
+
+    <section id="downloads" style="padding-top: 0;">
+      <div class="section-head">
+        <h2>Start with a Free Skill</h2>
+        <p>Three real, working Claude Skills, packaged as <code>.skill</code> files (Claude's native
+        format). Download one, add it to Claude Code, Claude Desktop, or Cowork, and it's running in
+        minutes — no build step.</p>
+      </div>
+      <div class="grid cols-3">
+
+        <div class="card">
+          <span class="tag">Podcasting</span>
+          <h3>Podcast Starter Skill</h3>
+          <p>The actual skill behind Dreams and Delivery, week to week — guest prep docs, host scripts,
+          episode show notes, and a two-week social rhythm across LinkedIn, Substack, Instagram, and
+          Threads.</p>
+          <div class="meta">Format: .skill · SKILL.md</div>
+          <a class="install-btn" href="downloads/podcast-starter.skill" download><span class="bolt">⚡</span> Install skill →</a>
+        </div>
+
+        <div class="card">
+          <span class="tag orange">TPM Tooling</span>
+          <h3>PMaaS — Program Management as a Service</h3>
+          <p>An AI-powered TPM that connects to your existing tools — Jira, Smartsheet, Airtable, GitHub,
+          Slack — and generates an honest, stakeholder-ready program status report and review prep, without
+          the manual pull-together.</p>
+          <div class="meta">Format: .skill · SKILL.md</div>
+          <a class="install-btn" href="downloads/pmaas.skill" download><span class="bolt">⚡</span> Install skill →</a>
+        </div>
+
+        <div class="card">
+          <span class="tag teal">Program Framework</span>
+          <h3>Skills → Consulting Skill</h3>
+          <p>The meta-skill behind this page: turns any technical skill into a three-tier consulting offer,
+          a one-page pitch, scoping questions, and outreach copy — so the work you already do becomes an
+          offer people can buy.</p>
+          <div class="meta">Format: .skill · SKILL.md</div>
+          <a class="install-btn" href="downloads/skills-to-consulting.skill" download><span class="bolt">⚡</span> Install skill →</a>
+        </div>
+
+      </div>
+      <p style="margin-top: var(--space-24); color: var(--text-dim); font-size: 0.9rem;">
+        New to Claude Skills? The button downloads a <code>.skill</code> file — Claude's actual package
+        format. Add it in Claude Code, Claude Desktop, or Cowork's skills settings; no build step required.
+        (Your browser will download the file like any other — there's no universal "click to auto-install
+        into any app" standard on the open web yet, so this is the fastest real path in until there is.)
+        Prefer to read the source first? All three skills are on
+        <a href="https://github.com/christinekahn/claude-skills" target="_blank" rel="noopener" style="color: var(--teal); border-bottom: 1px solid var(--border);">GitHub</a>.
+      </p>
+    </section>
+
+    <section id="catalog" style="padding-top: 0;">
+      <div class="section-head">
+        <h2>The Full Catalog</h2>
+        <p>The downloads are just the start. These are the patterns I bring to teams — shaped by real
+        programs I've led, and by the podcast I run every week. Filter by type, or scroll the full set —
+        for the career history behind them, see
+        <a href="index.html" style="color: var(--teal); border-bottom: 1px solid var(--border);">Career</a>.</p>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Filter skills by category">
+        <button class="filter-btn active" data-filter="all" onclick="filterSkills('all', this)" type="button">All</button>
+        <button class="filter-btn" data-filter="agentic" onclick="filterSkills('agentic', this)" type="button">Agentic Workflows</button>
+        <button class="filter-btn" data-filter="framework" onclick="filterSkills('framework', this)" type="button">Program Frameworks</button>
+        <button class="filter-btn" data-filter="risk" onclick="filterSkills('risk', this)" type="button">Risk &amp; Resiliency</button>
+        <button class="filter-btn" data-filter="training" onclick="filterSkills('training', this)" type="button">Training &amp; Enablement</button>
+        <button class="filter-btn" data-filter="podcast" onclick="filterSkills('podcast', this)" type="button">Podcasting</button>
+      </div>
+
+      <div class="grid cols-3" id="skill-grid">
+
+        <div class="card skill-card" data-category="agentic">
+          <span class="tag">Agentic Workflows</span>
+          <h3>Multi-Agent Workflow Design</h3>
+          <p>A pattern for coordinating several specialized AI agents — planner, executor, reviewer — to
+          carry a multi-step process end to end, with a feedback loop that keeps output quality climbing
+          over time instead of drifting.</p>
+          <div class="meta">Where it fits: any multi-step process that still needs a human at every handoff</div>
+          <a class="cta" href="contact.html?interest=multi-agent#message-form">Build this for your product →</a>
+        </div>
+
+        <div class="card skill-card" data-category="framework">
+          <span class="tag teal">Program Framework</span>
+          <h3>0→1 Rapid AI Integration Playbook</h3>
+          <p>A delivery framework for shipping a first AI integration in weeks, not quarters — sequencing,
+          risk gates, and the review cadence that keeps it moving without breaking things.</p>
+          <div class="meta">Where it fits: fast-moving AI feature launches under real deadline pressure</div>
+          <a class="cta" href="contact.html?interest=rapid-ai#message-form">Bring this to your team →</a>
+        </div>
+
+        <div class="card skill-card" data-category="risk">
+          <span class="tag yellow">Risk &amp; Resiliency</span>
+          <h3>Active/Active Resiliency Blueprint</h3>
+          <p>A disaster-recovery redesign pattern — moving critical systems from active/passive to
+          active/active, with recurring simulated failover exercises that pressure-test resiliency before
+          it's tested for real.</p>
+          <div class="meta">Where it fits: mission-critical systems with tight recovery-time requirements</div>
+          <a class="cta" href="contact.html?interest=resiliency#message-form">Assess your resiliency →</a>
+        </div>
+
+        <div class="card skill-card" data-category="framework">
+          <span class="tag teal">Program Framework</span>
+          <h3>Cross-Team Governance Model</h3>
+          <p>A lightweight governance model for running high-stakes, cross-functional programs without formal
+          authority — clear decision rights, escalation paths, and a quality bar everyone can see.</p>
+          <div class="meta">Where it fits: multi-team initiatives with unclear ownership or stalled decisions</div>
+          <a class="cta" href="contact.html?interest=governance#message-form">Bring order to your program →</a>
+        </div>
+
+        <div class="card skill-card" data-category="training">
+          <span class="tag orange">Training &amp; Enablement</span>
+          <h3>AI Fluency Enablement Program</h3>
+          <p>A hands-on curriculum for building real AI fluency across a team or org — prompt engineering,
+          agent-building fundamentals, and a cadence of office hours designed to make the learning stick.</p>
+          <div class="meta">Where it fits: teams that need practical AI skills, not just a slide deck</div>
+          <a class="cta" href="contact.html?interest=ai-training#message-form">Train your team →</a>
+        </div>
+
+        <div class="card skill-card" data-category="podcast">
+          <span class="tag">Podcasting</span>
+          <h3>Auto-Syncing Episode Pipeline</h3>
+          <p>Running live on the Creative tab of this site: the podcast episode grid pulls straight from an
+          RSS feed with zero manual updates — publish the episode once, and the site, and every downstream
+          post, stays current on its own.</p>
+          <div class="meta">Where it fits: anywhere manual updates are quietly eating someone's week</div>
+          <a class="cta" href="dreams-and-delivery.html">See it running →</a>
+        </div>
+
+        <div class="card skill-card" data-category="podcast">
+          <span class="tag">Podcasting</span>
+          <h3>AI Guest Prep &amp; Host Script Generator</h3>
+          <p>Turns a guest's background into a structured prep doc and host script — talking points,
+          question flow, and segues — built weekly for Dreams and Delivery, cutting pre-show prep from hours
+          to minutes without losing the personal touch.</p>
+          <div class="meta">Where it fits: interview-style shows that need solid prep every single week</div>
+          <a class="cta" href="#downloads">Get the free download ↑</a>
+        </div>
+
+        <div class="card skill-card" data-category="podcast">
+          <span class="tag">Podcasting</span>
+          <h3>One-Episode-to-Five-Posts Content Engine</h3>
+          <p>Turns a single recorded episode into a full promotion cycle — show notes, a Substack article, a
+          LinkedIn post, an Instagram caption, and a Threads post — each matched to its platform's voice
+          instead of copy-pasted.</p>
+          <div class="meta">Where it fits: solo creators and small teams who record but can't market it all</div>
+          <a class="cta" href="#downloads">Get the free download ↑</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="section-head">
+        <h2>Ways to Work Together</h2>
+        <p>Every skill above scales down to a single working session or up to an embedded partnership. The
+        exact framework behind these three tiers is the <a href="#downloads" style="color: var(--teal); border-bottom: 1px solid var(--border);">Skills → Consulting skill above</a> —
+        full service details live on the <a href="consulting.html" style="color: var(--teal); border-bottom: 1px solid var(--border);">Consulting page</a>.</p>
+      </div>
+      <div class="tier-grid">
+
+        <div class="tier-card">
+          <span class="tier-name">Working Session</span>
+          <h3>Try one skill, low commitment</h3>
+          <p>A half- or full-day session applying a single framework or playbook to a problem your team is
+          facing right now. The fastest way to see if the fit is right.</p>
+          <a class="btn btn-ghost" href="contact.html?interest=working-session#message-form">Start the conversation →</a>
+        </div>
+
+        <div class="tier-card">
+          <span class="tier-name">Applied Sprint</span>
+          <h3>2–4 weeks, one real problem</h3>
+          <p>Embedded delivery on a live initiative — agentic workflows, resiliency, governance, or podcast
+          production — using the exact patterns in the catalog above, adapted to your systems and team.</p>
+          <a class="btn btn-ghost" href="contact.html?interest=applied-sprint#message-form">Start the conversation →</a>
+        </div>
+
+        <div class="tier-card">
+          <span class="tier-name">Fractional Partnership</span>
+          <h3>Ongoing, 1–3 days a week</h3>
+          <p>Embedded strategic program leadership across your AI transformation roadmap — governance,
+          sequencing, and the cross-functional alignment that turns strategy into shipped product.</p>
+          <a class="btn btn-ghost" href="contact.html?interest=fractional#message-form">Start the conversation →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="page-next">
+      <div class="page-next-text">
+        <span class="k">Up next</span>
+        <span class="t">Hear the delivery mindset in action — the podcast &amp; music.</span>
+      </div>
+      <a class="btn btn-primary" href="dreams-and-delivery.html">Dreams and Delivery →</a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Christine Kahn · Portland, OR</span>
+    <div class="socials">
+      <a href="https://github.com/christinekahn" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="skills.html">Skills</a>
+      <a href="dreams-and-delivery.html">Creative</a>
+      <a href="https://www.christinekmusic.com" target="_blank" rel="noopener">Music</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function filterSkills(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.skill-card').forEach(function (card) {
+      var match = category === 'all' || card.getAttribute('data-category') === category;
+      card.classList.toggle('hide', !match);
+    });
+  }
+</script>
+
+</body>
+</html>
