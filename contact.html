@@ -75,6 +75,35 @@
   </section>
 
   <section style="padding-top: 0;">
+    <div class="section-head">
+      <h2>Be a guest on Dreams and Delivery</h2>
+      <p>For fellow creatives and techy people — the ones who ship ambitious things at work <em>and</em>
+      build something of their own alongside it. Tell me a little about what you do and what you're making.</p>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/mojoeozv" method="POST">
+      <div class="form-row">
+        <label for="guest-name">Name</label>
+        <input type="text" id="guest-name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="guest-email">Your email</label>
+        <input type="email" id="guest-email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="guest-delivers">What do you deliver at work?</label>
+        <textarea id="guest-delivers" name="delivers_at_work" rows="3" placeholder="Your role, team, what you ship..." required></textarea>
+      </div>
+      <div class="form-row">
+        <label for="guest-building">What are you building alongside it?</label>
+        <textarea id="guest-building" name="building_alongside" rows="3" placeholder="A side project, creative practice, business, something else..." required></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="Podcast guest interest — Dreams and Delivery">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn btn-primary">Pitch yourself →</button>
+    </form>
+  </section>
+
+  <section style="padding-top: 0;">
     <div class="contact-grid">
 
       <a class="contact-card" href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">
@@ -160,6 +189,14 @@
       'skills': {
         subject: 'Skill Marketplace inquiry',
         message: "Hi Christine — I found your Skill Marketplace and would like to talk about bringing one of your skills to my team."
+      },
+      'voice-pack': {
+        subject: 'Vocal samples: Voice Pack Vol. 1',
+        message: "Hi Christine — I'd like to buy Voice Pack Vol. 1 (spoken word). Here's what I'm working on:"
+      },
+      'custom-vocals': {
+        subject: 'Vocal samples: custom pack commission',
+        message: "Hi Christine — I'd like to commission a custom vocal pack. Here's the vibe, key, and tempo I'm after:"
       }
     };
     var interest = new URLSearchParams(window.location.search).get('interest');
