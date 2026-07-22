@@ -16,7 +16,34 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=11">
+<style>
+  /* Vocal sample pack demo players (page-scoped to avoid a styles.css cache-bust) */
+  .demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    margin: var(--space-16) 0;
+  }
+  .demo-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    font: 600 0.8rem 'Space Grotesk', sans-serif;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: var(--space-4) var(--space-16);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .demo-chip:hover { border-color: rgba(255,107,53,0.6); }
+  .demo-chip.playing { border-color: var(--teal); color: #067a6e; }
+  .demo-chip .ico { font-size: 0.7rem; }
+  a.demo-cta { display: inline-block; }
+</style>
 </head>
 <body>
 
@@ -317,6 +344,100 @@
 
     <section style="padding-top: 0;">
       <div class="section-head">
+        <h2>Vocal Sample Packs</h2>
+        <p>Royalty-free vocal samples for producers, straight from Christine's home studio —
+        isolated, studio-processed, and sliced into ready-to-use phrases. Every pack ships with a
+        royalty-free license and voice-provenance docs: cleared for your releases, never for AI
+        voice training or cloning.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card has-cover">
+          <svg class="card-cover" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Voice Pack Vol. 1 cover art — a microphone over a teal and pink waveform">
+            <defs>
+              <linearGradient id="vp-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1d2440"/><stop offset="1" stop-color="#0b0d16"/>
+              </linearGradient>
+              <linearGradient id="vp-wave" gradientUnits="userSpaceOnUse" x1="24" y1="0" x2="376" y2="0">
+                <stop offset="0" stop-color="#00d9c0"/><stop offset="1" stop-color="#ff206e"/>
+              </linearGradient>
+              <linearGradient id="vp-mic" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd23f"/><stop offset="1" stop-color="#ff6b35"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#vp-bg)"/>
+            <g stroke="url(#vp-wave)" stroke-width="8" stroke-linecap="round">
+              <line x1="48"  y1="176" x2="48"  y2="224"/>
+              <line x1="80"  y1="156" x2="80"  y2="244"/>
+              <line x1="112" y1="132" x2="112" y2="268"/>
+              <line x1="288" y1="132" x2="288" y2="268"/>
+              <line x1="320" y1="156" x2="320" y2="244"/>
+              <line x1="352" y1="176" x2="352" y2="224"/>
+            </g>
+            <rect x="168" y="96" width="64" height="120" rx="32" fill="url(#vp-mic)"/>
+            <g stroke="#0f1117" stroke-width="4" opacity="0.35">
+              <line x1="176" y1="128" x2="224" y2="128"/>
+              <line x1="176" y1="148" x2="224" y2="148"/>
+              <line x1="176" y1="168" x2="224" y2="168"/>
+            </g>
+            <path d="M148 188 a52 52 0 0 0 104 0" fill="none" stroke="#f4f5f7" stroke-width="8" stroke-linecap="round"/>
+            <line x1="200" y1="240" x2="200" y2="276" stroke="#f4f5f7" stroke-width="8" stroke-linecap="round"/>
+            <line x1="168" y1="276" x2="232" y2="276" stroke="#f4f5f7" stroke-width="8" stroke-linecap="round"/>
+            <text x="200" y="336" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" letter-spacing="4" fill="#f4f5f7">VOICE PACK</text>
+            <text x="200" y="364" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" letter-spacing="6" fill="#00d9c0">VOL. 1</text>
+          </svg>
+          <div class="card-body">
+            <span class="tag teal">Sample Pack</span>
+            <h3>Voice Pack Vol. 1 — Spoken Word</h3>
+            <p>22 spoken-word phrases from the Dreams and Delivery studio — warm, close-mic
+            podcast voice, processed and peak-normalized. 24-bit / 44.1 kHz WAV with license,
+            provenance, and integrity manifest included.</p>
+            <div class="demo-row" role="group" aria-label="Voice Pack Vol. 1 demo samples">
+              <button class="demo-chip" type="button" data-src="audio/demos/demo-spoken-01.mp3"><span class="ico" aria-hidden="true">▶</span> Demo 1</button>
+              <button class="demo-chip" type="button" data-src="audio/demos/demo-spoken-02.mp3"><span class="ico" aria-hidden="true">▶</span> Demo 2</button>
+              <button class="demo-chip" type="button" data-src="audio/demos/demo-spoken-03.mp3"><span class="ico" aria-hidden="true">▶</span> Demo 3</button>
+              <button class="demo-chip" type="button" data-src="audio/demos/demo-spoken-04.mp3"><span class="ico" aria-hidden="true">▶</span> Demo 4</button>
+            </div>
+            <a class="meta demo-cta" href="contact.html?interest=voice-pack#message-form">Get the pack →</a>
+          </div>
+        </div>
+        <div class="card has-cover">
+          <svg class="card-cover" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Custom vocals cover art — layered vocal waveforms rising like a crescendo">
+            <defs>
+              <linearGradient id="cv-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#3d1424"/><stop offset="1" stop-color="#0b0d16"/>
+              </linearGradient>
+              <linearGradient id="cv-w1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ff6b35"/><stop offset="1" stop-color="#ffd23f"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#cv-bg)"/>
+            <path d="M24 300 q30 -10 60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="#00d9c0" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+            <path d="M24 252 q30 -26 60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="#ff206e" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M24 196 q30 -52 60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="url(#cv-w1)" stroke-width="6" stroke-linecap="round"/>
+            <g fill="#ffd23f" opacity="0.9">
+              <circle cx="70" cy="86" r="2.5"/><circle cx="210" cy="60" r="3"/><circle cx="330" cy="96" r="2.5"/>
+            </g>
+            <path d="M200 64 q10 22 30 26 q-20 4 -30 26 q-10 -22 -30 -26 q20 -4 30 -26 Z" fill="#f4f5f7"/>
+            <text x="200" y="336" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" letter-spacing="4" fill="#f4f5f7">CUSTOM</text>
+            <text x="200" y="364" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" letter-spacing="6" fill="#ff6b35">VOCALS</text>
+          </svg>
+          <div class="card-body">
+            <span class="tag">Commission</span>
+            <h3>Custom Vocal Pack — Sung to Spec</h3>
+            <p>Operatic soprano phrases, ad-libs, and textures recorded for your track — trip-hop
+            to classical. You describe the vibe, key, and tempo; you get a licensed pack of
+            studio-processed stems that no one else has.</p>
+            <div class="demo-row" role="group" aria-label="Sung vocal demo">
+              <button class="demo-chip" type="button" data-src="audio/demos/demo-sung-01.mp3"><span class="ico" aria-hidden="true">▶</span> Sung demo — isolated from "Sirens Lament"</button>
+            </div>
+            <a class="meta demo-cta" href="contact.html?interest=custom-vocals#message-form">Commission a pack →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="section-head">
         <h2>Soundbath Meditation</h2>
         <p>Christine also guides soundbath meditation sessions — private, or as a collaborative event.</p>
       </div>
@@ -406,6 +527,37 @@
     var hash = location.hash.replace('#', '');
     showCreativeTab(hash === 'music' ? 'music' : 'podcast');
   });
+
+  /* Vocal sample pack demo players — one shared Audio element, chip buttons toggle. */
+  (function () {
+    var audio = null;
+    var current = null;
+
+    function stop() {
+      if (audio) { audio.pause(); audio.currentTime = 0; }
+      if (current) {
+        current.classList.remove('playing');
+        current.querySelector('.ico').textContent = '▶';
+        current = null;
+      }
+    }
+
+    document.querySelectorAll('.demo-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        if (current === chip) { stop(); return; }
+        stop();
+        if (!audio) {
+          audio = new Audio();
+          audio.addEventListener('ended', stop);
+        }
+        audio.src = chip.dataset.src;
+        audio.play();
+        current = chip;
+        chip.classList.add('playing');
+        chip.querySelector('.ico').textContent = '⏸';
+      });
+    });
+  })();
 
   /* Episode cards — pulled live from the Buzzsprout RSS feed.
      If the fetch fails, the static cards in the HTML stay as-is. */

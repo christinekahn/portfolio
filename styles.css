@@ -179,13 +179,13 @@ nav.site {
   flex-wrap: wrap;
   gap: var(--space-8) var(--space-8);
   margin-bottom: var(--space-24);
-  row-gap: 6px;
+  row-gap: var(--space-8);
 }
 
 .eyebrow-row .eyebrow {
   margin-bottom: 0;
   font-size: 0.72rem;
-  padding: 6px var(--space-12, 12px);
+  padding: var(--space-8) var(--space-12, 12px);
   white-space: nowrap;
 }
 
@@ -523,8 +523,8 @@ section {
   height: 22px;
   border-radius: 6px;
   object-fit: contain;
-  background: #fff;
-  padding: 2px;
+  background: var(--card);
+  padding: var(--space-4);
   flex-shrink: 0;
 }
 
@@ -672,10 +672,10 @@ footer.site .socials a:hover {
 
 /* ---------- Page Card (light editorial insert) ---------- */
 .page-card {
-  background: #fcfcfb;
-  --text: #1c1b22;
+  background: #ffffff;
+  --text: var(--bg);
   --text-dim: #6b6877;
-  --border: #e6e4ec;
+  --border: rgba(15,17,23,0.08);
   --card: #ffffff;
   color: var(--text);
   border-radius: var(--radius);
@@ -865,23 +865,13 @@ footer.site .socials a:hover {
   }
 }
 
-@media (max-width: 420px) {
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ===========================
    Subtabs (Creative: Podcast / Music)
    =========================== */
 
 .subtab-nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-16);
   margin-top: var(--space-32);
 }
@@ -898,6 +888,8 @@ footer.site .socials a:hover {
   padding: var(--space-16) var(--space-24);
   cursor: pointer;
   position: relative;
+  flex: 1 1 260px;
+  min-width: 260px;
   transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
@@ -918,7 +910,7 @@ footer.site .socials a:hover {
   display: block;
   font-size: 0.85rem;
   color: var(--text-dim);
-  margin-top: 2px;
+  margin-top: var(--space-4);
 }
 
 .subtab-btn::after {
@@ -993,12 +985,6 @@ footer.site .socials a:hover {
   to { opacity: 1; }
 }
 
-@media (max-width: 600px) {
-  .subtab-nav {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ===========================
    Cover art (Podcast episode / Music release cards)
    =========================== */
@@ -1053,7 +1039,7 @@ svg.card-cover {
 .eq {
   display: inline-flex;
   align-items: flex-end;
-  gap: 3px;
+  gap: var(--space-4);
   height: 22px;
   margin-left: var(--space-8);
   vertical-align: baseline;
