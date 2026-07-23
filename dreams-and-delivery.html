@@ -43,6 +43,50 @@
   .demo-chip.playing { border-color: var(--teal); color: #067a6e; }
   .demo-chip .ico { font-size: 0.7rem; }
   a.demo-cta { display: inline-block; }
+
+  /* Episode carousel */
+  .carousel-wrap { position: relative; }
+  .carousel-track {
+    display: flex;
+    gap: var(--space-24);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: var(--space-8);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .carousel-track > * {
+    flex: 0 0 280px;
+    min-width: 280px;
+    scroll-snap-align: start;
+  }
+  .carousel-nav {
+    position: absolute;
+    top: 140px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    z-index: 2;
+    transition: opacity 0.15s ease;
+  }
+  .carousel-nav:hover { border-color: var(--orange); }
+  .carousel-nav.prev { left: -16px; }
+  .carousel-nav.next { right: -16px; }
+  .carousel-nav[disabled] { opacity: 0.25; cursor: default; pointer-events: none; }
+  @media (max-width: 640px) {
+    .carousel-nav { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -116,46 +160,50 @@
         <script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/2622779.js?container_id=buzzsprout-large-player&player=large'></script>
       </div>
       <!-- Cards below are a static fallback — replaced at load time from the Buzzsprout RSS feed -->
-      <div class="grid cols-3" id="episode-grid">
-        <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19408376-aaron-kagan-graspingai-exploring-the-human-ai-connection" target="_blank" rel="noopener">
-          <img class="card-cover" src="https://storage.buzzsprout.com/oz1gqdryskhaultqcl835dao7rhp?.jpg" alt="Episode 4 cover art: Aaron Kagan" loading="lazy">
-          <div class="card-body">
-            <span class="tag">Episode 4</span>
-            <h3>Aaron Kagan: GraspingAI — Exploring the Human-AI Connection</h3>
-            <p>Why most companies don't have an AI problem — they have a human-AI coordination problem. Plus: can AI dream?</p>
-            <div class="meta">July 1, 2026 · 20:35</div>
-          </div>
-        </a>
-        <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19367376-martina-ziegenfuss-creating-outside-the-box" target="_blank" rel="noopener">
-          <img class="card-cover" src="https://storage.buzzsprout.com/z29gu308nhh6r77060l7kdep7p58?.jpg" alt="Episode 3 cover art: Martina Ziegenfuss" loading="lazy">
-          <div class="card-body">
-            <span class="tag">Episode 3</span>
-            <h3>Martina Ziegenfuss: Creating Outside the Box</h3>
-            <p>What happens when your TPM and ops skills become the product. Martina on building Clervio, her
-            fractional operator venture.</p>
-            <div class="meta">June 24, 2026 · 24:17</div>
-          </div>
-        </a>
-        <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19358433-mary-lynne-williams-the-frequency-shift" target="_blank" rel="noopener">
-          <img class="card-cover" src="https://storage.buzzsprout.com/0pre204t2ekysse4szt3tt0oxp3x?.jpg" alt="Episode 2 cover art: Mary-Lynne Williams" loading="lazy">
-          <div class="card-body">
-            <span class="tag teal">Episode 2</span>
-            <h3>Mary-Lynne Williams: The Frequency Shift</h3>
-            <p>What it feels like when your work stops matching your frequency — and how AI agents freed her to
-            build something new.</p>
-            <div class="meta">June 17, 2026 · 21:37</div>
-          </div>
-        </a>
-        <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19299902-jessica-valentine-nelson-aligning-who-you-are-with-how-you-live-and-lead" target="_blank" rel="noopener">
-          <img class="card-cover" src="https://storage.buzzsprout.com/bp8stru2v10h5von22iai92jlq4y?.jpg" alt="Episode 1 cover art: Jessica Valentine Nelson" loading="lazy">
-          <div class="card-body">
-            <span class="tag yellow">Episode 1</span>
-            <h3>Jessica Valentine Nelson: Aligning Who You Are With How You Live and Lead</h3>
-            <p>What organizational change teaches you about personal transformation, and turning a layoff into a
-            launchpad.</p>
-            <div class="meta">June 5, 2026 · 18:39</div>
-          </div>
-        </a>
+      <div class="carousel-wrap">
+        <button class="carousel-nav prev" type="button" aria-label="Previous episodes" onclick="scrollEpisodes(-1)">‹</button>
+        <div class="carousel-track" id="episode-grid">
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19408376-aaron-kagan-graspingai-exploring-the-human-ai-connection" target="_blank" rel="noopener">
+            <img class="card-cover" src="https://storage.buzzsprout.com/oz1gqdryskhaultqcl835dao7rhp?.jpg" alt="Episode 4 cover art: Aaron Kagan" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Episode 4</span>
+              <h3>Aaron Kagan: GraspingAI — Exploring the Human-AI Connection</h3>
+              <p>Why most companies don't have an AI problem — they have a human-AI coordination problem. Plus: can AI dream?</p>
+              <div class="meta">July 1, 2026 · 20:35</div>
+            </div>
+          </a>
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19367376-martina-ziegenfuss-creating-outside-the-box" target="_blank" rel="noopener">
+            <img class="card-cover" src="https://storage.buzzsprout.com/z29gu308nhh6r77060l7kdep7p58?.jpg" alt="Episode 3 cover art: Martina Ziegenfuss" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Episode 3</span>
+              <h3>Martina Ziegenfuss: Creating Outside the Box</h3>
+              <p>What happens when your TPM and ops skills become the product. Martina on building Clervio, her
+              fractional operator venture.</p>
+              <div class="meta">June 24, 2026 · 24:17</div>
+            </div>
+          </a>
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19358433-mary-lynne-williams-the-frequency-shift" target="_blank" rel="noopener">
+            <img class="card-cover" src="https://storage.buzzsprout.com/0pre204t2ekysse4szt3tt0oxp3x?.jpg" alt="Episode 2 cover art: Mary-Lynne Williams" loading="lazy">
+            <div class="card-body">
+              <span class="tag teal">Episode 2</span>
+              <h3>Mary-Lynne Williams: The Frequency Shift</h3>
+              <p>What it feels like when your work stops matching your frequency — and how AI agents freed her to
+              build something new.</p>
+              <div class="meta">June 17, 2026 · 21:37</div>
+            </div>
+          </a>
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19299902-jessica-valentine-nelson-aligning-who-you-are-with-how-you-live-and-lead" target="_blank" rel="noopener">
+            <img class="card-cover" src="https://storage.buzzsprout.com/bp8stru2v10h5von22iai92jlq4y?.jpg" alt="Episode 1 cover art: Jessica Valentine Nelson" loading="lazy">
+            <div class="card-body">
+              <span class="tag yellow">Episode 1</span>
+              <h3>Jessica Valentine Nelson: Aligning Who You Are With How You Live and Lead</h3>
+              <p>What organizational change teaches you about personal transformation, and turning a layoff into a
+              launchpad.</p>
+              <div class="meta">June 5, 2026 · 18:39</div>
+            </div>
+          </a>
+        </div>
+        <button class="carousel-nav next" type="button" aria-label="Next episodes" onclick="scrollEpisodes(1)">›</button>
       </div>
     </section>
 
@@ -559,6 +607,35 @@
     });
   })();
 
+  /* Episode carousel — scroll by one card width per click, disable at the ends. */
+  function scrollEpisodes(dir) {
+    var track = document.getElementById('episode-grid');
+    if (!track) return;
+    var card = track.querySelector('.card');
+    var amount = card ? card.getBoundingClientRect().width + 24 : 300;
+    track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+  }
+
+  (function () {
+    var track = document.getElementById('episode-grid');
+    var wrap = track ? track.closest('.carousel-wrap') : null;
+    if (!track || !wrap) return;
+    var prevBtn = wrap.querySelector('.carousel-nav.prev');
+    var nextBtn = wrap.querySelector('.carousel-nav.next');
+
+    function updateNav() {
+      var max = track.scrollWidth - track.clientWidth;
+      prevBtn.disabled = track.scrollLeft <= 4;
+      nextBtn.disabled = track.scrollLeft >= max - 4;
+    }
+
+    track.addEventListener('scroll', updateNav);
+    window.addEventListener('resize', updateNav);
+    // Re-check once the RSS fetch below (re)populates the track.
+    new MutationObserver(updateNav).observe(track, { childList: true });
+    updateNav();
+  })();
+
   /* Episode cards — pulled live from the Buzzsprout RSS feed.
      If the fetch fails, the static cards in the HTML stay as-is. */
   (function () {
@@ -567,7 +644,6 @@
 
     var SHOW_ART = 'https://storage.buzzsprout.com/8xqlkt62te07zx3o1h5692u7698h?.jpg';
     var TAG_CLASSES = ['tag', 'tag teal', 'tag yellow'];
-    var MAX_EPISODES = 6;
 
     function itunesEl(item, name) {
       var els = item.getElementsByTagNameNS('*', name);
@@ -644,7 +720,7 @@
         var items = Array.prototype.slice.call(doc.getElementsByTagName('item'));
         if (!items.length) return;
 
-        var cards = items.slice(0, MAX_EPISODES).map(function (item, i) {
+        var cards = items.map(function (item, i) {
           var epEl = itunesEl(item, 'episode');
           var epNum = epEl ? epEl.textContent.trim() : '';
           var imgEl = itunesEl(item, 'image');
