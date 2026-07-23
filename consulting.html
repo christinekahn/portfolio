@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consulting — Christine Kahn</title>
-<meta name="description" content="Fractional TPM leadership, program consulting, and podcast & music production by Christine Kahn.">
+<meta name="description" content="Work with Christine Kahn three ways — a single Working Session, a 2-4 week Applied Sprint, or ongoing Fractional Partnership — across AI transformation, program leadership, and podcast production.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dreamsanddelivery.com/consulting.html">
 <meta property="og:title" content="Consulting — Christine Kahn">
-<meta property="og:description" content="Fractional TPM leadership, program consulting, and podcast &amp; music production by Christine Kahn.">
+<meta property="og:description" content="Work with Christine Kahn three ways — a single Working Session, a 2-4 week Applied Sprint, or ongoing Fractional Partnership — across AI transformation, program leadership, and podcast production.">
 <meta property="og:image" content="https://dreamsanddelivery.com/christine-large-profile.png">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=12">
 <style>
   /* ---------- Consulting page sections ---------- */
   .c-section {
@@ -35,16 +35,6 @@
     margin-bottom: var(--space-32);
   }
 
-  .c-service { padding: var(--space-24) 0; border-top: 1px solid var(--border); }
-  .c-service:first-of-type { border-top: none; padding-top: 0; }
-  .c-service h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 var(--space-8);
-    color: var(--text);
-  }
-  .c-service p { color: var(--text-dim); font-size: 0.98rem; margin: 0; }
-
   .c-about p { color: var(--text); margin: 0; }
   .c-about p + p { margin-top: var(--space-16); }
 
@@ -55,6 +45,30 @@
     border-bottom: 1px solid var(--border);
   }
   .c-contact a:hover { border-color: var(--teal); }
+
+  /* How an engagement starts */
+  .start-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-32);
+    margin-top: var(--space-8);
+  }
+  .start-step { flex: 1 1 220px; min-width: 220px; }
+  .start-step .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: var(--space-16);
+  }
+  .start-step h4 { margin: 0 0 var(--space-8); font-size: 1.05rem; font-weight: 700; color: var(--text); }
+  .start-step p { margin: 0; color: var(--text-dim); font-size: 0.92rem; line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -86,37 +100,77 @@
         under ambiguity.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">Work with me →</a>
+        <a class="btn btn-primary" href="#tiers">See ways to work together →</a>
+        <a class="btn btn-ghost" href="contact.html#message-form">Send a message</a>
       </div>
     </section>
 
-    <section class="c-section" id="services">
-      <div class="c-eyebrow">Services</div>
+    <section class="c-section" id="tiers">
+      <div class="c-eyebrow">Ways to Work Together</div>
+      <div class="tier-grid">
 
-      <div class="c-service">
-        <h3>Fractional TPM Leadership</h3>
-        <p>Embedded strategic program leadership, one to three days a week. Shapes how ambitious initiatives
-        get structured from the start — governance, sequencing, resource decisions, and the cross-functional
-        alignment that turns strategy into execution.</p>
+        <div class="tier-card">
+          <span class="tier-name">Working Session</span>
+          <h3>Try one skill, low commitment</h3>
+          <p>A half- or full-day session applying a single framework or playbook to a problem your team is
+          facing right now. The fastest way to see if the fit is right.</p>
+          <a class="btn btn-ghost" href="contact.html?interest=working-session#message-form">Start the conversation →</a>
+        </div>
+
+        <div class="tier-card featured">
+          <span class="tier-badge">Most Requested</span>
+          <span class="tier-name">Applied Sprint</span>
+          <h3>2–4 weeks, one real problem</h3>
+          <p>Embedded delivery on a live initiative — agentic workflows, resiliency, governance, or podcast
+          production — using patterns from the <a href="skills.html" style="color: inherit; border-bottom: 1px solid var(--border);">Skill Marketplace</a>, adapted to your systems and team.</p>
+          <a class="btn btn-primary" href="contact.html?interest=applied-sprint#message-form">Start the conversation →</a>
+        </div>
+
+        <div class="tier-card">
+          <span class="tier-name">Fractional Partnership</span>
+          <h3>Ongoing, 1–3 days a week</h3>
+          <p>Embedded strategic program leadership across your AI transformation roadmap — governance,
+          sequencing, and the cross-functional alignment that turns strategy into shipped product.</p>
+          <a class="btn btn-ghost" href="contact.html?interest=fractional#message-form">Start the conversation →</a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="c-service">
-        <h3>Program Consulting</h3>
-        <p>Organizational diagnostics and program transformation for engineering orgs navigating complexity —
-        AI adoption, scaling challenges, or delivery dysfunction. Pattern recognition from 12+ years across
-        tech, media, and fintech. Starts with a structured delivery assessment.</p>
+    <section class="c-section" id="how-it-starts">
+      <div class="c-eyebrow">How an Engagement Starts</div>
+      <div class="start-steps">
+        <div class="start-step">
+          <span class="num">1</span>
+          <h4>Send a note</h4>
+          <p>Pick the tier above, or just message me what you're facing — no blind form, tell me the real
+          problem.</p>
+        </div>
+        <div class="start-step">
+          <span class="num">2</span>
+          <h4>15-minute scoping call</h4>
+          <p>We talk through fit, timeline, and what "done" looks like. No pitch deck, no obligation.</p>
+        </div>
+        <div class="start-step">
+          <span class="num">3</span>
+          <h4>Scope and start date, in writing</h4>
+          <p>You get a one-page scope and a start date before anything begins — no surprises once the work
+          starts.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="c-service">
-        <h3>Podcast Consulting &amp; Production</h3>
-        <p>End-to-end podcast launches, ongoing editing and production retainers, and podcast strategy for
-        creators, brands, and executives — from someone who makes one herself.</p>
-      </div>
-
-      <div class="c-service">
-        <h3>Music &amp; Creative</h3>
-        <p>Composition, session work, and production — including theme music, intros and outros, and
-        branded audio.</p>
+    <section class="c-section" id="focus">
+      <div class="c-eyebrow">Areas of Focus</div>
+      <p style="color: var(--text-dim); margin: 0 0 var(--space-24); max-width: 620px;">
+        Domains I bring to any tier above — shaped by 12+ years leading AI, risk, and program delivery, plus
+        the podcast and music production I run every week.
+      </p>
+      <div class="focus-list">
+        <span class="pill">AI Transformation &amp; Risk</span>
+        <span class="pill">Program &amp; Delivery Leadership</span>
+        <span class="pill">Podcast Production &amp; Strategy</span>
+        <span class="pill">Music &amp; Creative Production</span>
       </div>
     </section>
 
@@ -134,10 +188,8 @@
     </section>
 
     <section class="c-section c-contact" id="contact">
-      <div class="c-eyebrow">Contact</div>
-      <p>The best way to start is a short conversation. <a href="https://www.linkedin.com/in/christinekahn/" target="_blank" rel="noopener">Message me on LinkedIn</a> and tell me what you're trying to figure out.</p>
-      <p>Hiring for a full-time role instead? That's my priority right now — see the
-      <a href="index.html">Career page</a> or <a href="contact.html">get in touch</a>.</p>
+      <div class="c-eyebrow">Not Sure Which Tier Fits?</div>
+      <p>Skip the guesswork — <a href="contact.html#message-form">send a message</a> and tell me what you're trying to figure out.</p>
     </section>
 
     <div class="page-next">

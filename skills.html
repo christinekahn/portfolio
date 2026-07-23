@@ -16,7 +16,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=12">
 <style>
   /* ---------- Skill marketplace page ---------- */
   .tag.orange {
@@ -71,35 +71,6 @@
 
   .skill-card { display: flex; flex-direction: column; }
   .skill-card.hide { display: none; }
-
-  .tier-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-24);
-  }
-
-  .tier-card {
-    flex: 1 1 280px;
-    min-width: 260px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: var(--space-32);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .tier-card .tier-name {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: var(--space-8);
-  }
-
-  .tier-card h3 { margin: 0 0 var(--space-8); font-size: 1.2rem; }
-  .tier-card p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 var(--space-16); flex: 1; }
 
   .install-btn {
     display: inline-flex;
@@ -337,7 +308,8 @@
           <a class="btn btn-ghost" href="contact.html?interest=working-session#message-form">Start the conversation →</a>
         </div>
 
-        <div class="tier-card">
+        <div class="tier-card featured">
+          <span class="tier-badge">Most Requested</span>
           <span class="tier-name">Applied Sprint</span>
           <h3>2–4 weeks, one real problem</h3>
           <p>Embedded delivery on a live initiative — agentic workflows, resiliency, governance, or podcast
