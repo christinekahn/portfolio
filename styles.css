@@ -383,6 +383,56 @@ section {
   color: var(--text-dim);
 }
 
+/* ---------- Engagement tiers (skills.html + consulting.html) ---------- */
+.tier-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-48);
+}
+
+.tier-card {
+  flex: 1 1 280px;
+  min-width: 260px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tier-card.featured {
+  border-color: var(--orange);
+  border-width: 2px;
+}
+
+.tier-badge {
+  position: absolute;
+  top: calc(-1 * var(--space-12, 12px));
+  left: var(--space-32);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--gradient);
+  padding: var(--space-4) var(--space-12, 12px);
+  border-radius: 999px;
+}
+
+.tier-card .tier-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: var(--space-8);
+}
+
+.tier-card h3 { margin: 0 0 var(--space-8); font-size: 1.2rem; }
+.tier-card p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 var(--space-16); flex: 1; }
+
 /* ---------- Case study blocks (work page) ---------- */
 .case {
   background: var(--card);
