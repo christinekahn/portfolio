@@ -828,6 +828,18 @@ footer.site .socials a:hover {
     margin: 0 auto var(--space-8);
   }
 
+  .eyebrow-row {
+    justify-content: center;
+  }
+
+  .eyebrow-row .eyebrow {
+    white-space: normal;
+    max-width: 100%;
+    font-size: 0.68rem;
+    padding: var(--space-4) var(--space-8);
+    text-align: center;
+  }
+
   .lede {
     max-width: none;
   }
