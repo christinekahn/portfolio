@@ -45,8 +45,19 @@
   a.demo-cta { display: inline-block; }
 
   /* Transcript season groupings */
-  .season-head { margin: var(--space-32) 0 var(--space-16); font-size: 1.1rem; }
-  .season-head:first-of-type { margin-top: 0; }
+  .season-head { margin: 0 0 var(--space-16); font-size: 1.1rem; }
+
+  /* Season tabs — one shared state drives the carousel, intro and transcripts */
+  .season-tabs { display: flex; flex-wrap: wrap; gap: var(--space-8); margin-bottom: var(--space-24); }
+  .season-tab {
+    font-family: inherit; font-size: 0.88rem; font-weight: 600; color: var(--text);
+    background: var(--card); border: 2px solid var(--border); border-radius: 999px;
+    padding: var(--space-8) var(--space-16); cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .season-tab:hover, .season-tab.active { border-color: var(--pink); background: rgba(255,32,110,0.06); }
+  .season-tab:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+  [data-season-panel][hidden], #episode-grid > [hidden] { display: none; }
 
   /* Episode carousel */
   .carousel-wrap { position: relative; }
@@ -154,18 +165,24 @@
     <section style="padding-top: 0;">
       <div class="section-head">
         <h2>Episodes</h2>
-        <p>Season 2 — the human constant in a world with AI: makers, artists, and builders on what
+        <p data-season-panel="2">Season 2 — the human constant in a world with AI: makers, artists, and builders on what
         stays human as the tools change.</p>
+        <p data-season-panel="1" hidden>Season 1 — conversations on what it takes to deliver, and what comes
+        after.</p>
       </div>
       <div style="margin-bottom: var(--space-32);">
         <div id='buzzsprout-large-player'></div>
         <script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/2622779.js?container_id=buzzsprout-large-player&player=large'></script>
       </div>
       <!-- Cards below are a static fallback — replaced at load time from the Buzzsprout RSS feed -->
+      <div class="season-tabs" role="tablist" aria-label="Episode seasons">
+        <button class="season-tab" type="button" role="tab" data-season="2" onclick="showSeason('2')">Season 2</button>
+        <button class="season-tab" type="button" role="tab" data-season="1" onclick="showSeason('1')">Season 1</button>
+      </div>
       <div class="carousel-wrap">
         <button class="carousel-nav prev" type="button" aria-label="Previous episodes" onclick="scrollEpisodes(-1)">‹</button>
         <div class="carousel-track" id="episode-grid">
-          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/20097104-claire-cote-zaftik-soulshine-music-festival-creating-together-irl" target="_blank" rel="noopener">
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/20097104-claire-cote-zaftik-soulshine-music-festival-creating-together-irl" data-season="2" target="_blank" rel="noopener">
             <img class="card-cover" src="https://storage.buzzsprout.com/tq5qkoceoddgd3wbr8eegcnrglsa?.jpg" alt="S2 · Episode 5 cover art: Claire Côte" loading="lazy">
             <div class="card-body">
               <span class="tag">S2 · Episode 5</span>
@@ -174,7 +191,7 @@
               <div class="meta">November 9, 2026 · 41:52</div>
             </div>
           </a>
-          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/20052677-clare-mc-laughlin-seen-unseen-bridging-worlds-art-access-and-the-tools-that-connect-us" target="_blank" rel="noopener">
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/20052677-clare-mc-laughlin-seen-unseen-bridging-worlds-art-access-and-the-tools-that-connect-us" data-season="2" target="_blank" rel="noopener">
             <img class="card-cover" src="https://storage.buzzsprout.com/zjyll2xcnkv1bwwwyoshg0s4h7o1?.jpg" alt="S2 · Episode 4 cover art: Clare Mc Laughlin" loading="lazy">
             <div class="card-body">
               <span class="tag teal">S2 · Episode 4</span>
@@ -183,7 +200,7 @@
               <div class="meta">November 1, 2026 · 38:01</div>
             </div>
           </a>
-          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19941231-ernest-kahn-kahn-entertainment-yoyo-spreading-the-joy-of-play" target="_blank" rel="noopener">
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19941231-ernest-kahn-kahn-entertainment-yoyo-spreading-the-joy-of-play" data-season="2" target="_blank" rel="noopener">
             <img class="card-cover" src="https://storage.buzzsprout.com/31xrzajchvfify4pjx0netixc4x4?.jpg" alt="S2 · Episode 3 cover art: Ernest Kahn" loading="lazy">
             <div class="card-body">
               <span class="tag yellow">S2 · Episode 3</span>
@@ -192,7 +209,7 @@
               <div class="meta">October 13, 2026 · 30:51</div>
             </div>
           </a>
-          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19869857-sarah-mocke-microsoft-the-wide-lens-interdisciplinary-leadership-and-rise-of-citizen-ai-builders" target="_blank" rel="noopener">
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19869857-sarah-mocke-microsoft-the-wide-lens-interdisciplinary-leadership-and-rise-of-citizen-ai-builders" data-season="2" target="_blank" rel="noopener">
             <img class="card-cover" src="https://storage.buzzsprout.com/ymwqs9gmneaal6ywqtxzimp908hc?.jpg" alt="S2 · Episode 2 cover art: Sarah Mocke" loading="lazy">
             <div class="card-body">
               <span class="tag">S2 · Episode 2</span>
@@ -201,7 +218,7 @@
               <div class="meta">September 29, 2026 · 35:47</div>
             </div>
           </a>
-          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19570813-rebekah-tolley-british-art-fair-keeping-art-human-centric-as-tech-changes" target="_blank" rel="noopener">
+          <a class="card has-cover" href="https://dreamsanddelivery.buzzsprout.com/2622779/episodes/19570813-rebekah-tolley-british-art-fair-keeping-art-human-centric-as-tech-changes" data-season="2" target="_blank" rel="noopener">
             <img class="card-cover" src="https://storage.buzzsprout.com/pk5ts2r9998c2p0md2mq6fpo4dgc?.jpg" alt="S2 · Episode 1 cover art: Rebekah Tolley" loading="lazy">
             <div class="card-body">
               <span class="tag teal">S2 · Episode 1</span>
@@ -311,6 +328,11 @@
         <p>Full text of each conversation, added episode by episode. Search-friendly, screen-reader
         friendly, and handy if you'd rather read than listen.</p>
       </div>
+      <div class="season-tabs" role="tablist" aria-label="Transcript seasons">
+        <button class="season-tab" type="button" role="tab" data-season="2" onclick="showSeason('2')">Season 2</button>
+        <button class="season-tab" type="button" role="tab" data-season="1" onclick="showSeason('1')">Season 1</button>
+      </div>
+      <div data-season-panel="2">
       <h3 class="season-head">Season 2 — The Human Constant in a World with AI</h3>
       <div class="case-list">
         <details class="case-toggle">
@@ -714,6 +736,8 @@
           </div>
         </details>
       </div>
+      </div>
+      <div data-season-panel="1" hidden>
       <h3 class="season-head">Season 1</h3>
       <div class="case-list">
         <details class="case-toggle">
@@ -977,6 +1001,7 @@
 <p><strong>Christine Kahn:</strong> To everyone listening, if this resonated, subscribe and share it with someone who needs it. I&#x27;m Christine Kahn, and this is Dreams and Delivery.</p>
           </div>
         </details>
+      </div>
       </div>
     </section>
 
@@ -1251,7 +1276,29 @@
     });
     if (history.replaceState) { history.replaceState(null, '', '#' + tab); }
   }
+  /* Season tabs — filters the episode carousel, swaps the intro line, and shows
+     that season's transcripts. Every .season-tabs bar stays in sync. */
+  function showSeason(season) {
+    window.currentSeason = season;
+    document.querySelectorAll('.season-tab').forEach(function (btn) {
+      var selected = btn.dataset.season === season;
+      btn.classList.toggle('active', selected);
+      btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+    document.querySelectorAll('[data-season-panel]').forEach(function (el) {
+      el.hidden = el.getAttribute('data-season-panel') !== season;
+    });
+    var track = document.getElementById('episode-grid');
+    if (track) {
+      Array.prototype.forEach.call(track.children, function (card) {
+        card.hidden = card.getAttribute('data-season') !== season;
+      });
+      track.scrollLeft = 0;
+      track.dispatchEvent(new Event('scroll'));
+    }
+  }
   document.addEventListener('DOMContentLoaded', function () {
+    showSeason('2');
     var hash = location.hash.replace('#', '');
     showCreativeTab(hash === 'music' ? 'music' : 'podcast');
   });
@@ -1411,6 +1458,7 @@
 
           var card = document.createElement('a');
           card.className = 'card has-cover';
+          card.setAttribute('data-season', season || '1');
           card.href = episodeLink(item);
           card.target = '_blank';
           card.rel = 'noopener';
@@ -1452,6 +1500,7 @@
 
         grid.innerHTML = '';
         cards.forEach(function (c) { grid.appendChild(c); });
+        showSeason(window.currentSeason || '2');
       })
       .catch(function () { /* static fallback cards remain */ });
   })();
